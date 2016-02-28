@@ -15,14 +15,16 @@ data = json.loads(data)
 #     outcsv = csv.writer(outf)
 #     outcsv.writerows(getRows(data))
 
+print data
 
 f = csv.writer(open("ablocs.csv", "wb+"))
 
 # Write CSV Header, If you dont need that, remove this line
-f.writerow(["city", "state", "zip", "latitude", "longitude"])
+f.writerow(["name", "city", "state", "zip", "latitude", "longitude"])
 
 for x in data:
-    f.writerow([x["city"], 
+    f.writerow([x["name"],
+    			x["city"], 
                 x["state"], 
                 str(x["zip"]), 
                 x["latitude"],

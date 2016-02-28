@@ -1,456 +1,455 @@
-city,state,zip,latitude,longitude
-Anchorage,AK,99508,61.1841,-149.837
-Fairbanks,AK,99701,64.8359,-147.757
-Juneau,AK,99801,58.3303,-134.473
-Kenai,AK,99611,60.556,-151.242
-Huntsville,AL,35810,34.7247,-86.582
-Montgomery,AL,36109,32.3661,-86.3068
-Tuscaloosa,AL,35404,33.2191,-87.5302
-Little Rock,AR,72211,34.746,-92.3971
-Phoenix,AZ,85016,33.4873,-112.047
-Phoenix,AZ,85018,33.4969,-112.012
-Phoenix,AZ,85006,33.4635,-112.064
-Phoenix,AZ,85015,33.5387,-112.092
-Tempe,AZ,85281,33.4153,-111.918
-Tucson,AZ,85712,32.2486,-110.881
-Bakersfield,CA,93301,35.3819,-119.021
-Chico,CA,95973,39.7719,-121.843
-Chico,CA,95928,39.735,-121.816
-Chula Vista,CA,91913,32.6188,-117.02
-Concord,CA,94520,37.979,-122.035
-Downey,CA,90241,33.9374,-118.126
-Encinitas,CA,92024,33.0568,-117.262
-Eureka,CA,95503,40.7788,-124.135
-Fairfield,CA,94533,38.258,-122.052
-Fresno,CA,93701,36.7448,-119.786
-Fresno,CA,93728,36.7521,-119.8
-Glendale,CA,91203,34.1581,-118.261
-Glendale,CA,91205,34.1318,-118.252
-San Diego,CA,92103,32.7532,-117.165
-Lawndale,CA,90260,33.8986,-118.353
-Long Beach,CA,90806,39.5468,-74.2518
-Los Angeles,CA,90005,34.0634,-118.289
-Los Angeles,CA,90007,34.0272,-118.276
-Los Angeles,CA,90033,34.0472,-118.21
-Los Angeles,CA,90250,34.0138,-118.416
-Los Angeles,CA,90033,34.057,-118.21
-Los Angeles,CA,90003,33.961,-118.278
-Marina Del Rey,CA,90292,33.9825,-118.442
-Mission Hills,CA,91345,34.2555,-118.467
-Modesto,CA,95355,37.673,-120.976
-Oakland,CA,94607,37.7951,-122.274
-Santa Ana,CA,92705,33.7883,-117.879
-Orange,CA,92866,33.7767,-117.836
-Pacoima,CA,91331,34.2655,-118.424
-Pasadena,CA,91104,34.164,-118.133
-Pleasanton,CA,94566,37.6711,-121.873
-Pomona,CA,91767,34.0736,-117.752
-Rancho Mirage,CA,92270,33.7437,-116.413
-Redding,CA,96002,40.5786,-122.338
-Richmond,CA,94806,37.9775,-122.329
-Riverside,CA,92501,33.903,-117.471
-Riverside,CA,92506,33.9473,-117.399
-Sacramento,CA,95825,38.6064,-121.382
-Sacramento,CA,95816,38.5818,-121.464
-Sacramento,CA,95825,38.5977,-121.406
-San Bernardino,CA,92408,34.0659,-117.287
-San Bernardino,CA,92408,34.0678,-117.286
-San Diego,CA,92126,32.8837,-117.155
-San Diego,CA,92101,32.7265,-117.164
-San Diego,CA,92117,32.8208,-117.183
-San Francisco,CA,94115,37.7855,-122.439
-San Francisco,CA,94110,37.7469,-122.42
-San Francisco,CA,94110,37.7461,-122.42
-San Francisco,CA,94110,37.7543,-122.405
-San Jose,CA,95126,37.337,-121.92
-San Luis Obispo,CA,93401,35.2769,-120.662
-Santa Ana,CA,92701,33.7611,-117.854
-Santa Barbara,CA,93101,34.4206,-119.693
-Santa Cruz,CA,95060,36.9724,-122.026
-Santa Rosa,CA,95409,38.458,-122.676
-Seaside,CA,93955,36.6027,-121.85
-Van Nuys,CA,91405,34.1587,-118.449
-Simi Valley,CA,93065,34.2717,-118.741
-Stockton,CA,95207,38.0121,-121.316
-Stockton,CA,95204,37.9809,-121.294
-Tarzana,CA,91356,34.1701,-118.531
-Thousand Oaks,CA,91320,34.185,-118.907
-Torrance,CA,90504,33.8666,-118.327
-Torrance,CA,90505,33.8154,-118.349
-Vallejo,CA,94590,38.1159,-122.248
-Van Nuys,CA,91405,34.2023,-118.449
-Van Nuys,CA,91405,34.1995,-118.448
-Ventura,CA,93003,34.2596,-119.218
-Walnut Creek,CA,94596,37.8983,-122.07
-West Hills,CA,91304,34.2193,-118.608
-West Hills,CA,91304,34.2193,-118.608
-Whittier,CA,90602,33.9721,-118.038
-Boulder,CO,80304,40.0255,-105.283
-Boulder,CO,80301,40.0296,-105.257
-Denver,CO,80220,39.7374,-104.915
-Denver,CO,80220,39.731,-104.934
-Denver,CO,80246,39.7085,-104.924
-Denver,CO,80207,39.7695,-104.905
-Durango,CO,81303,37.2469,-107.876
-Englewood,CO,80111,39.6239,-104.894
-Englewood,CO,80113,39.6529,-104.984
-Hartford,CT,06106,41.7554,-72.6764
-New Haven,CT,06511,41.3201,-72.9186
-Norwich,CT,06360,41.5532,-72.1039
-Stamford,CT,06905,41.0563,-73.5197
-West Hartford,CT,06110,41.7303,-72.7232
-Washington,DC,20037,38.8972,-77.0472
-Dover,DE,19904,39.1465,-75.5252
-Wilmington,DE,19801,39.7429,-75.5508
-Altamonte Springs,FL,32701,28.6558,-81.3656
-Clearwater,FL,33756,27.9396,-82.7753
-Clearwater,FL,33761,28.0356,-82.7394
-Coral Springs,FL,33071,26.2666,-80.25
-Fort Lauderdale,FL,33308,26.1895,-80.1158
-Fort Lauderdale,FL,33311,26.166,-80.1699
-Fort Lauderdale,FL,33334,26.2035,-80.1349
-Fort Myers,FL,33901,26.6057,-81.869
-Fort Myers,FL,33903,26.6673,-81.9071
-Fort Pierce,FL,34950,27.4431,-80.3353
-Ft. Myers,FL,33919,26.5566,-81.8973
-Gainesville,FL,32609,29.6738,-82.3367
-Gainesville,FL,32601,29.6609,-82.3383
-Hialeah,FL,33013,25.8674,-80.2773
-Hialeah,FL,33015,25.9419,-80.3032
-Hialeah,FL,33012,25.8771,-80.3219
-Hialeah,FL,33013,25.8452,-80.263
-Hollywood,FL,33021,26.0117,-80.1824
-Jacksonville,FL,32216,30.3322,-81.6556
-Jacksonville,FL,32216,30.2895,-81.5978
-Jacksonville,FL,32216,30.2785,-81.6027
-Lakeland,FL,33813,27.984,-81.9565
-Miami,FL,33166,25.8112,-80.3266
-Miami,FL,33143,25.6902,-80.3061
-Miami,FL,33162,25.9279,-80.1991
-Miami,FL,33135,25.7647,-80.2396
-Miami,FL,33155,25.748,-80.3145
-Miami,FL,33136,25.7882,-80.217
-Miami,FL,33173,25.7017,-80.3458
-Miami,FL,33135,25.789,-80.2264
-Miami,FL,33133,25.7363,-80.2474
-Miami,FL,33135,25.7714,-80.2288
-Miramar,FL,33023,25.9847,-80.2106
-Naples,FL,34103,26.1824,-81.7924
-North Miami Beach,FL,33162,25.9253,-80.1822
-North Miami Beach,FL,33162,25.9313,-80.1625
-Orlando,FL,32803,28.5644,-81.3696
-Orlando,FL,32806,28.5289,-81.3804
-Orlando,FL,32805,28.5341,-81.4056
-Pensacola,FL,32504,30.4889,-87.2272
-Plantation,FL,33317,26.1208,-80.2065
-Port Charlotte,FL,33952,26.9864,-82.1012
-Sarasota,FL,34239,27.3094,-82.5302
-Sarasota,FL,34236,27.3429,-82.5422
-Miami,FL,33183,25.7062,-80.3828
-St. Petersburg,FL,33713,27.771,-82.6894
-St. Petersburg,FL,33710,27.8034,-82.7283
-St. Petersburg,FL,33702,27.854,-82.6481
-Tallahassee,FL,32301,30.4322,-84.2358
-Tamarac,FL,33321,26.2182,-80.2528
-Tampa,FL,33613,28.0805,-82.4206
-Tampa,FL,33609,27.9447,-82.4988
-Tampa,FL,33617,28.0216,-82.3942
-Tampa,FL,33612,28.0696,-82.4356
-Tampa,FL,33606,27.9395,-82.4658
-West Palm Beach,FL,33407,26.7604,-80.0995
-Atlanta,GA,30342,33.8771,-84.3804
-Atlanta,GA,30341,33.8766,-84.2618
-Atlanta,GA,30329,33.8357,-84.3244
-Atlanta,GA,30324,33.8075,-84.3663
-Augusta,GA,30907,33.4997,-82.0806
-College Park,GA,30349,33.5857,-84.4682
-Columbus,GA,31904,32.5013,-84.959
-Decatur,GA,30035,33.7144,-84.2177
-Savannah,GA,31401,32.0594,-81.0973
-Honolulu,HI,96814,21.2989,-157.841
-Kahului,HI,96732,20.8875,-156.464
-Des Moines,IA,50315,41.5274,-93.6024
-Iowa City,IA,52245,41.6644,-91.5334
-Iowa City,IA,52246,41.6495,-91.5415
-Boise,ID,83702,43.6131,-116.195
-Boise,ID,83703,43.6531,-116.255
-Twin Falls,ID,83301,42.5575,-114.47
-Aurora,IL,60504,41.7595,-88.239
-Champaign,IL,61820,40.1406,-88.2465
-Chicago,IL,60647,41.9317,-87.6881
-Chicago,IL,60661,41.8832,-87.6453
-Chicago,IL,60616,41.8488,-87.6236
-Chicago,IL,60610,41.904,-87.6331
-Chicago,IL,60637,41.79,-87.6053
-Chicago,IL,60612,41.8781,-87.6298
-Des Plaines,IL,60016,42.0512,-87.887
-Downers Grove,IL,60516,41.7516,-88.025
-Glen Ellyn,IL,60137,41.8603,-88.032
-Granite City,IL,62040,38.7002,-90.1441
-Peoria,IL,61614,40.7775,-89.6227
-Wood Dale,IL,60191,41.9632,-87.9742
-Bloomington,IN,47403,39.1624,-86.5349
-Indianapolis,IN,46222,39.7875,-86.2214
-Indianapolis,IN,46219,39.7844,-86.0641
-Indianapolis,IN,46268,39.9101,-86.241
-Merrillville,IN,46410,41.461,-87.3331
-Overland Park,KS,66211,38.9282,-94.6413
-Overland Park,KS,66211,38.9309,-94.6367
-Lexington,KY,40503,38.0081,-84.5203
-Louisville,KY,40202,38.2548,-85.7532
-Baton Rouge,LA,70806,30.4438,-91.0999
-Bossier City,LA,71111,32.533,-93.7103
-Shreveport,LA,71104,32.4818,-93.7414
-Attleboro,MA,02703,41.942,-71.2697
-Boston,MA,02115,42.3356,-71.1066
-Boston,MA,02215,42.3526,-71.1229
-Brookline,MA,02446,42.3443,-71.1148
-Brookline,MA,02446,42.3369,-71.1213
-Greenfield,MA,01301,42.5948,-72.5935
-Haverhill,MA,01830,42.7673,-71.0472
-Springfield,MA,01107,44.0458,-122.975
-Wellesley,MA,02481,42.3162,-71.2452
-Worcester,MA,01609,42.263,-71.8184
-Annapolis,MD,21401,38.9765,-76.509
-Baltimore,MD,21237,39.3391,-76.4895
-Baltimore,MD,21201,39.2939,-76.6199
-Baltimore,MD,21236,39.3671,-76.5202
-Bethesda,MD,20814,38.993,-77.096
-College Park,MD,20740,38.9979,-76.9126
-Germantown,MD,20874,39.18,-77.2739
-Hagerstown,MD,21740,39.6418,-77.72
-Hyattsville,MD,20783,38.9818,-76.979
-Owings Mills,MD,21117,39.4137,-76.7776
-Rockville,MD,20850,39.0996,-77.155
-Silver Spring,MD,20910,38.9983,-77.0334
-Suitland,MD,20746,38.8079,-76.8987
-Augusta,ME,04332,44.3682,-69.7973
-Bangor,ME,04401,44.8236,-68.7352
-Portland,ME,04101,43.6808,-70.2898
-Ann Arbor,MI,48104,42.2553,-83.6984
-Detroit,MI,48205,42.4499,-82.9601
-Detroit,MI,48219,42.4295,-83.2324
-Detroit,MI,48235,42.4156,-83.2022
-Flint,MI,48532,43.0159,-83.7461
-Flint,MI,48504,43.0275,-83.7417
-Grand Rapids,MI,49503,42.9628,-85.6609
-Kalamazoo,MI,49006,42.277,-85.6406
-Southfield,MI,48075,42.4682,-83.2393
-Sterling Heights,MI,48310,42.579,-83.0718
-Sterling Heights,MI,48312,42.5512,-83.0105
-Warren,MI,48093,42.5033,-83.0071
-West Bloomfield,MI,48322,42.5388,-83.3597
-Westland,MI,48185,42.3251,-83.3842
-Duluth,MN,55802,46.7884,-92.0981
-Minneapolis,MN,55404,44.9592,-93.264
-Minneapolis,MN,55404,44.9707,-93.2613
-Robbinsdale,MN,55422,45.0252,-93.3322
-St. Paul,MN,55114,44.9181,-93.1837
-St. Louis,MO,63108,38.6368,-90.1054
-Jackson,MS,39216,32.3346,-90.177
-Helena,MT,59601,46.6027,-112.058
-Missoula,MT,59802,46.8773,-114.013
-Chapel Hill,NC,27514,35.9525,-79.006
-Chapel Hill,NC,27514,35.9459,-79.0108
-Charlotte,NC,28211,35.1896,-80.8058
-Charlotte,NC,28273,35.1251,-80.8801
-Charlotte,NC,28211,35.199,-80.8036
-Fayetteville,NC,28306,35.0234,-78.8939
-Fayetteville,NC,28303,35.0793,-78.9594
-Greensboro,NC,27406,36.0365,-79.7991
-High Point,NC,27262,35.965,-80.0132
-Jacksonville,NC,28546,34.7664,-77.3864
-Raleigh,NC,27606,35.7595,-78.7291
-Raleigh,NC,27607,35.8144,-78.6942
-Winston-Salem,NC,27103,36.0801,-80.2931
-North Fargo,ND,58102,46.8767,-96.7869
-Bellevue,NE,68005,41.1368,-95.9059
-Lincoln,NE,68516,40.7914,-96.6675
-Omaha,NE,68134,41.2875,-96.0555
-Concord,NH,03301,43.2018,-71.5352
-Greenland,NH,03840,43.0367,-70.8366
-Manchester,NH,03103,42.9837,-71.435
-Manchester,NH,03104,43.0015,-71.4631
-Cherry Hill,NJ,08034,39.9268,-74.9969
-Somerset,NJ,08873,40.4113,-74.4219
-East Orange,NJ,07018,40.7518,-74.2136
-Elizabeth,NJ,07208,40.6794,-74.2136
-Englewood,NJ,07631,40.8838,-73.9847
-Englewood,NJ,07631,40.8943,-73.9727
-Hackensack,NJ,07601,40.9079,-74.0413
-Howell,NJ,07731,40.1475,-74.2242
-Jersey City,NJ,07306,40.7404,-74.0613
-Montclair,NJ,07042,40.8128,-74.2159
-Phillipsburg,NJ,08865,40.6889,-75.1993
-Plainfield,NJ,07060,40.6105,-74.4099
-Hamilton,NJ,08619,40.3119,-74.6658
-Shrewsbury,NJ,07702-0095,40.338,-74.0672
-Somerset,NJ,08873,40.5053,-74.468
-Tom's River,NJ,08755,39.9678,-74.233
-Trenton,NJ,08608,39.4808,-84.4502
-Union,NJ,07083,40.7017,-74.2638
-Voorhees,NJ,08043,39.8592,-75.0113
-Woodbridge,NJ,07095,40.5518,-74.2871
-Albuquerque,NM,87108,35.0844,-106.586
-Albuquerque,NM,87102,35.0896,-106.639
-Albuquerque,NM,87106,35.1007,-106.542
-Santa Teresa,NM,88008,31.8475,-106.625
-Henderson,NV,89074,36.0352,-115.085
-Las Vegas,NV,89119,36.1149,-115.131
-Las Vegas,NV,89117,36.1241,-115.119
-Las Vegas,NV,89104,36.146,-115.143
-Las Vegas,NV,89169,36.1326,-115.133
-Las Vegas,NV,89169,36.1973,-115.121
-Reno,NV,89502,39.4724,-119.774
-Albany,NY,12206,42.6809,-73.7885
-Bayside,NY,11364,40.7343,-73.7549
-Bronx,NY,10457,40.8436,-73.9117
-Bronx,NY,10455,40.8124,-73.9031
-Bronx,NY,10461,40.8552,-73.8435
-Bronx,NY,10451,40.8177,-73.924
-Bronx,NY,10451,40.8169,-73.9197
-Brooklyn,NY,11201,40.693,-73.9909
-Brooklyn,NY,11234,40.6179,-73.9101
-Brooklyn,NY,11201,40.693,-73.9909
-Brooklyn,NY,11201,40.6924,-73.986
-Brooklyn,NY,11237,40.704,-73.9187
-Buffalo,NY,14214,42.9367,-78.8424
-Amherst,NY,14228,43.0284,-78.7997
-East Syracuse,NY,13057,43.0767,-76.0659
-Flushing,NY,11375,40.7343,-73.8495
-Flushing,NY,11354,40.1614,-81.1267
-Flushing,NY,11374,43.032,-83.805
-Jackson Heights,NY,11372,40.7549,-73.8448
-Kew Gardens,NY,11415,40.7214,-73.8484
-Hauppauge,NY,11788,40.8076,-73.2544
-Hempstead,NY,11550,40.7105,-73.6132
-Hudson,NY,12534,42.2585,-73.7667
-Huntington Station,NY,11746,40.8298,-73.4116
-Ithaca,NY,14850,42.4397,-76.5025
-Jackson Heights,NY,11372,40.7475,-73.8871
-Jackson Heights,NY,11372,40.7475,-73.8909
-Queens,NY,11417,40.6828,-73.8348
-Jamaica - Queens,NY,11435,40.7505,-73.9369
-Manhasset,NY,11030,40.7722,-73.7034
-Monroe,NY,10950,41.3575,-74.1904
-New Rochelle,NY,10801,40.9094,-73.7817
-New York,NY,10032,40.8415,-73.9411
-New York,NY,10016,40.7467,-73.9834
-New York,NY,10017,40.7642,-73.9628
-New York,NY,10029,40.7904,-73.9538
-New York,NY,10017,40.7499,-73.972
-New York,NY,10003,40.6502,-73.9652
-New York,NY,10012,40.7256,-73.9937
-New York,NY,10023,40.7692,-73.9826
-Niagara Falls,NY,14304,43.0846,-78.9393
-Plattsburgh,NY,12901,44.6972,-73.4572
-Poughkeepsie,NY,12601,41.7009,-73.9295
-Rochester,NY,14618,43.1195,-77.595
-Rochester,NY,14620,43.1179,-77.6234
-Rochester,NY,14605,43.1605,-77.5998
-Rochester,NY,14620,43.136,-77.6075
-Schenectady,NY,12307,42.8014,-73.9287
-Smithtown,NY,11787,40.8539,-73.1972
-Smithtown,NY,11787,40.8313,-73.1979
-Syracuse,NY,13210,43.0469,-76.1336
-Troy,NY,12180,42.7315,-73.6914
-Utica,NY,13502,43.0943,-75.2468
-Vestal,NY,13851,42.0857,-76.0541
-White Plains,NY,10605,41.025,-73.7652
-White Plains,NY,10601,41.0403,-73.7887
-Yonkers,NY,10710,40.9643,-73.8381
-Akron,OH,44304,41.0739,-81.4916
-Cuyahoga Falls,OH,44223,41.0292,-81.5193
-Cincinnati,OH,45219,39.1236,-84.5079
-Bedford Heights,OH,44146,41.4092,-81.5414
-Cleveland,OH,44120,41.4837,-81.599
-Columbus,OH,43205,39.9657,-82.9676
-Columbus,OH,43213,39.9562,-82.9112
-Dayton,OH,45429,39.6892,-84.1412
-Toledo,OH,43612,41.6928,-83.569
-Norman,OK,73069,35.2063,-97.4786
-Tulsa,OK,74135,36.1162,-95.9064
-Bend,OR,97701,44.0729,-121.305
-Eugene,OR,97403,44.0445,-123.102
-Portland,OR,97205,45.5211,-122.682
-Portland,OR,97210,45.5296,-122.703
-Salem,OR,97305,44.9587,-122.986
-Bethlehem,PA,18017,40.6084,-75.4902
-Allentown,PA,18101,40.6022,-75.4756
-Harrisburg,PA,17110,40.2883,-76.9043
-Philadelphia,PA,19106,39.9536,-75.1527
-Philadelphia,PA,19154,40.1037,-75.0004
-Philadelphia,PA,19107,39.9477,-75.1606
-Pittsburgh,PA,15206,30.1598,-85.5825
-Pittsburgh,PA,15222,40.4434,-79.9968
-Reading,PA,19602,40.3338,-75.9302
-Warminster,PA,18974,40.2007,-75.0862
-West Chester,PA,19382,39.9569,-75.6102
-York,PA,17401,39.9524,-76.7253
-Cranston,RI,02905,41.7791,-71.4009
-Providence,RI,02903,41.8164,-71.408
-Charleston,SC,29407,32.7979,-79.9991
-Columbia,SC,29204,34.0151,-81.0034
-Greenville,SC,29605,34.812,-82.4192
-Sioux Falls,SD,57106,43.5148,-96.8064
-Bristol,TN,37620,36.5929,-82.2198
-Knoxville,TN,37916,35.9593,-83.9311
-Memphis,TN,38104,35.1428,-90.0018
-Memphis,TN,38112,35.1395,-89.9797
-Nashville,TN,37203,36.162,-86.8028
-Nashville,TN,37222,36.0822,-86.7301
-Austin,TX,78704,30.3086,-97.7549
-Austin,TX,78704,30.2212,-97.7628
-Dallas,TX,75243,32.8945,-96.7525
-El Paso,TX,79902,31.7711,-106.494
-El Paso,TX,79902,31.7661,-106.486
-Fort Worth,TX,76132,32.742,-97.3374
-Houston,TX,77008,29.809,-95.4104
-Houston,TX,77004,29.7297,-95.3841
-Houston,TX,77023,29.7258,-95.335
-Houston,TX,77098,29.7339,-95.4249
-Houston,TX,77090,30.019,-95.4447
-McAllen,TX,78501,26.1966,-98.2358
-San Antonio,TX,78229,29.5222,-98.5712
-San Antonio,TX,78229,29.4718,-98.5348
-San Antonio,TX,78222,29.3754,-98.4157
-Salt Lake City,UT,84102,40.7658,-111.863
-Salt Lake City,UT,84107,40.6876,-111.871
-Alexandria,VA,22304,38.8138,-77.1375
-Alexandria,VA,22314,38.8073,-77.0798
-Charlottesville,VA,22901,38.0737,-78.4878
-Charlottesville,VA,22901,38.0814,-78.4921
-Fairfax,VA,22031-5216,38.8664,-77.2324
-Falls Church,VA,22046,38.8793,-77.183
-Newport News,VA,23601,37.0536,-76.4613
-Norfolk,VA,23502,36.853,-76.2327
-Richmond,VA,23229,37.6049,-77.5686
-Richmond,VA,23220,37.5547,-77.4749
-Richmond,VA,23221,37.5594,-77.4902
-Roanoke,VA,24017,37.3118,-80.0065
-Roanoke,VA,24016,37.2628,-79.9438
-Virginia Beach,VA,23462,36.8576,-76.1768
-Virginia Beach,VA,23452,36.8414,-76.0856
-Burlington,VT,05401,44.4812,-73.1992
-Rutland,VT,05701,43.6142,-72.9738
-Bellingham,WA,98225,48.7505,-122.471
-Bremerton,WA,98310,47.6065,-122.637
-Everett,WA,98201,47.9755,-122.209
-Kennewick,WA,99336,46.2315,-119.222
-Olympia,WA,98502,47.0435,-122.897
-Renton,WA,98057,47.4808,-122.218
-Seattle,WA,98115,47.7001,-122.325
-Seattle,WA,98122,47.6176,-122.305
-Seattle,WA,98101,47.6087,-122.336
-Seattle,WA,98104,47.6099,-122.323
-Spokane,WA,99205,47.6751,-117.408
-Tacoma,WA,98418,47.2243,-122.433
-Tacoma,WA,98405,47.2546,-122.452
-Tacoma,WA,98405,47.2488,-122.451
-Yakima,WA,98902,46.5925,-120.524
-Madison,WI,53704,43.1231,-89.3246
-Milwaukee,WI,53202,43.0485,-87.8964
-Milwaukee,WI,53202,43.0343,-87.9034
-Charleston,WV,25302,38.3639,-81.6427
-Charleston,WV,25304-2042,38.3207,-81.5802
-Jackson,WY,83001,43.4739,-110.785
+name,city,state,zip,latitude,longitude
+Anchorage Health Center- Planned Parenthood,Anchorage,AK,99508,61.1841,-149.837
+Fairbanks Health Center-Planned Parenthood,Fairbanks,AK,99701,64.8359,-147.757
+Juneau Health Center-Planned Parenthood,Juneau,AK,99801,58.3303,-134.473
+Office of Dr. Michael Merrick,Kenai,AK,99611,60.556,-151.242
+Alabama Women's Center for Reproductive Alternatives,Huntsville,AL,35810,34.7247,-86.582
+Reproductive Health Services Of Montgomery,Montgomery,AL,36109,32.3661,-86.3068
+West Alabama Women's Center,Tuscaloosa,AL,35404,33.2191,-87.5302
+Little Rock Family Planning Services,Little Rock,AR,72211,34.746,-92.3971
+Acacia Women's Center,Phoenix,AZ,85016,33.4873,-112.047
+Camelback Family Planning,Phoenix,AZ,85018,33.4969,-112.012
+Family Planning Associates Medical Group - Phoenix,Phoenix,AZ,85006,33.4635,-112.064
+Desert Star Family Planning,Phoenix,AZ,85015,33.5387,-112.092
+Tempe Health Center-Planned Parenthood,Tempe,AZ,85281,33.4153,-111.918
+Tucson Women's Center - Planned Parenthood (formerly Old Pueblo Family Planning),Tucson,AZ,85712,32.2486,-110.881
+FPA Women's Health - Bakersfield (Formerly Family Planning Associates Medical Group),Bakersfield,CA,93301,35.3819,-119.021
+Chico Health Center - Planned Parenthood,Chico,CA,95973,39.7719,-121.843
+Women's Health Specialists,Chico,CA,95928,39.735,-121.816
+Ob/Gyn Office of Dr. Chac,Chula Vista,CA,91913,32.6188,-117.02
+Concord Health Center-Planned Parenthood,Concord,CA,94520,37.979,-122.035
+FPA Women's Health - Downey (Formerly Family Planning Associates Medical Group),Downey,CA,90241,33.9374,-118.126
+Dr. Neysa Whiteman,Encinitas,CA,92024,33.0568,-117.262
+Eureka Health Center - Planned Parenthood (aka Six Rivers Planned Parenthood),Eureka,CA,95503,40.7788,-124.135
+Fairfield-Planned Parenthood,Fairfield,CA,94533,38.258,-122.052
+FPA Women's Health - Fresno (Formerly Family Planning Associates Medical Group),Fresno,CA,93701,36.7448,-119.786
+Fulton Street Health Center - Planned Parenthood,Fresno,CA,93728,36.7521,-119.8
+FPA Women's Health - Glendale (Formerly Family Planning Associates Medical Group),Glendale,CA,91203,34.1581,-118.261
+Glendale Women's Center,Glendale,CA,91205,34.1318,-118.252
+"Dr. Homer Chin - UCSD Women's Health Services, AKA Pregnancy Options Cllinic",San Diego,CA,92103,32.7532,-117.165
+South Bay Health Center - Planned Parenthood,Lawndale,CA,90260,33.8986,-118.353
+FPA Women's Health - Long Beach (Formerly Family Planning Associates Medical Group),Long Beach,CA,90806,39.5468,-74.2518
+FPA Women's Health - Los Angeles (Formerly Family Planning Associates Medical Group),Los Angeles,CA,90005,34.0634,-118.289
+Her Medical Clinic,Los Angeles,CA,90007,34.0272,-118.276
+Her Smart Choice - Formerly LA Medical Clinic,Los Angeles,CA,90033,34.0472,-118.21
+Pacific Women's Health Care,Los Angeles,CA,90250,34.0138,-118.416
+Bixby Health Center - Planned Parenthood,Los Angeles,CA,90033,34.057,-118.21
+Dorothy Hecht Health Center - Planned Parenthood,Los Angeles,CA,90003,33.961,-118.278
+Marina Women's Medical Group,Marina Del Rey,CA,90292,33.9825,-118.442
+FPA Women's Health - Mission Hills (Formerly Family Planning Associates Medical Group),Mission Hills,CA,91345,34.2555,-118.467
+FPA Women's Health - Modesto (Formerly Family Planning Associates Medical Group),Modesto,CA,95355,37.673,-120.976
+Family Planning Specialists,Oakland,CA,94607,37.7951,-122.274
+FPA Women's Health - Santa Ana (Formerly Family Planning Associates Medical Group),Santa Ana,CA,92705,33.7883,-117.879
+Planned Parenthood Orange & San Bernardino Counties,Orange,CA,92866,33.7767,-117.836
+Her Medical Clinic,Pacoima,CA,91331,34.2655,-118.424
+Planned Parenthood Pasadena and San Gabriel Valley,Pasadena,CA,91104,34.164,-118.133
+"Forrest O Smith, MD",Pleasanton,CA,94566,37.6711,-121.873
+Planned Parenthood,Pomona,CA,91767,34.0736,-117.752
+Rancho Mirage Family Planning and Surgical Services Center - Planned Parenthood,Rancho Mirage,CA,92270,33.7437,-116.413
+Women's Health Specialists,Redding,CA,96002,40.5786,-122.338
+Hilltop-Richmond Health Center - Planned Parenthood,Richmond,CA,94806,37.9775,-122.329
+FPA Women's Health - Riverside (Formerly Family Planning Associates Medical Group),Riverside,CA,92501,33.903,-117.471
+Riverside Family Planning and Specialty Services Center - Planned Parenthood,Riverside,CA,92506,33.9473,-117.399
+FPA - Choice Medical Group - Sacramento,Sacramento,CA,95825,38.6064,-121.382
+B Street Health Center - Planned Parenthood,Sacramento,CA,95816,38.5818,-121.464
+Women's Health Specialists,Sacramento,CA,95825,38.5977,-121.406
+FPA Women's Health - San Bernardino (Formerly Family Planning Associates Medical Group),San Bernardino,CA,92408,34.0659,-117.287
+San Bernardino Health Center - Planned Parenthood,San Bernardino,CA,92408,34.0678,-117.286
+FPA Women's Health - San Diego (Formerly Family Planning Associates Medical Group),San Diego,CA,92126,32.8837,-117.155
+First Avenue Specialty Services Michelle Wagner Center - Planned Parenthood,San Diego,CA,92101,32.7265,-117.164
+San Diego Women's Med. Clinic,San Diego,CA,92117,32.8208,-117.183
+UCSF Mt. Zion Women's Options Center,San Francisco,CA,94115,37.7855,-122.439
+St. Luke's Women's Center,San Francisco,CA,94110,37.7469,-122.42
+San Francisco-Planned Parenthood,San Francisco,CA,94110,37.7461,-122.42
+Women's Options Center,San Francisco,CA,94110,37.7543,-122.405
+San Jose-Planned Parenthood,San Jose,CA,95126,37.337,-121.92
+San Luis Obispo-Planned Parenthood,San Luis Obispo,CA,93401,35.2769,-120.662
+Family Planning Medical Clinic,Santa Ana,CA,92701,33.7611,-117.854
+Santa Barbara Center-Planned Parenthood,Santa Barbara,CA,93101,34.4206,-119.693
+Westside Health Center - Planned Parenthood,Santa Cruz,CA,95060,36.9724,-122.026
+Women's Health Specialists,Santa Rosa,CA,95409,38.458,-122.676
+Seaside Health Center-Planned Parenthood,Seaside,CA,93955,36.6027,-121.85
+LA Medical Care,Van Nuys,CA,91405,34.1587,-118.449
+Simi Women's Center,Simi Valley,CA,93065,34.2717,-118.741
+North Stockton Health Center - Planned Parenthood,Stockton,CA,95207,38.0121,-121.316
+Stockton Pregnancy Control,Stockton,CA,95204,37.9809,-121.294
+Center for Comprehensive Women's Health,Tarzana,CA,91356,34.1701,-118.531
+Thousand Oaks Center-Planned Parenthood,Thousand Oaks,CA,91320,34.185,-118.907
+Women's Care Center,Torrance,CA,90504,33.8666,-118.327
+FPA Women's Health - Torrance (Formerly Family Planning Associates Medical Group),Torrance,CA,90505,33.8154,-118.349
+Vallejo Health Center-Planned Parenthood,Vallejo,CA,94590,38.1159,-122.248
+My Choice Medical Center,Van Nuys,CA,91405,34.2023,-118.449
+Van Nuys Health Center-Planned Parenthood,Van Nuys,CA,91405,34.1995,-118.448
+Ventura Center-Planned Parenthood,Ventura,CA,93003,34.2596,-119.218
+Walnut Creek Health Center-Planned Parenthood,Walnut Creek,CA,94596,37.8983,-122.07
+ASAP Confidential Care,West Hills,CA,91304,34.2193,-118.608
+Westwind Women's Services/Abortions by Choice,West Hills,CA,91304,34.2193,-118.608
+Whittier Health Center-Planned Parenthood,Whittier,CA,90602,33.9721,-118.038
+Boulder Abortion Clinic,Boulder,CO,80304,40.0255,-105.283
+Boulder Valley Women's Health Ctr.,Boulder,CO,80301,40.0296,-105.257
+Abortion Counseling Service,Denver,CO,80220,39.7374,-104.915
+Partners In Women's Health / Fertility & Family Planning Associates (Rose Medical Center Location),Denver,CO,80220,39.731,-104.934
+Mile High Ob Gyn,Denver,CO,80246,39.7085,-104.924
+Stapleton-Planned Parenthood,Denver,CO,80207,39.7695,-104.905
+Durango-Planned Parenthood,Durango,CO,81303,37.2469,-107.876
+Mile High Ob Gyn,Englewood,CO,80111,39.6239,-104.894
+Healthy Futures For Women,Englewood,CO,80113,39.6529,-104.984
+Hartford GYN Center,Hartford,CT,06106,41.7554,-72.6764
+New Haven Center-Planned Parenthood,New Haven,CT,06511,41.3201,-72.9186
+Norwich-Planned Parenthood,Norwich,CT,06360,41.5532,-72.1039
+Stamford-Planned Parenthood,Stamford,CT,06905,41.0563,-73.5197
+West Hartford Center-Planned Parenthood,West Hartford,CT,06110,41.7303,-72.7232
+Washington Surgi-Center,Washington,DC,20037,38.8972,-77.0472
+Dover Center-Planned Parenthood,Dover,DE,19904,39.1465,-75.5252
+Wilmington-Planned Parenthood,Wilmington,DE,19801,39.7429,-75.5508
+All Women's Health Center,Altamonte Springs,FL,32701,28.6558,-81.3656
+"Bread and Roses a.k.a. Indian Rocks Women's Center, Inc.",Clearwater,FL,33756,27.9396,-82.7753
+Women's OB/GYN of Countryside,Clearwater,FL,33761,28.0356,-82.7394
+Women's Awareness of Coral Springs - Gynecologic Surgeons,Coral Springs,FL,33071,26.2666,-80.25
+All Women's Center,Fort Lauderdale,FL,33308,26.1895,-80.1158
+Ft. Lauderdale Women's Clinic,Fort Lauderdale,FL,33311,26.166,-80.1699
+East Cypress Women's Center,Fort Lauderdale,FL,33334,26.2035,-80.1349
+Ft. Myers Women's Health Center,Fort Myers,FL,33901,26.6057,-81.869
+"Southwest Florida Women's Clinic, Dr. Ali. A. Azima",Fort Myers,FL,33903,26.6673,-81.9071
+A Woman's World Medical Center,Fort Pierce,FL,34950,27.4431,-80.3353
+Fort Myers Health Center-Planned Parenthood,Ft. Myers,FL,33919,26.5566,-81.8973
+All Women's Health Center Inc,Gainesville,FL,32609,29.6738,-82.3367
+Bread and Roses Women's Health a.k.a. Gainesville Woman Care LLC,Gainesville,FL,32601,29.6609,-82.3383
+A GYN Diagnostic Center,Hialeah,FL,33013,25.8674,-80.2773
+A Woman's Choice,Hialeah,FL,33015,25.9419,-80.3032
+A Woman's Option Inc.,Hialeah,FL,33012,25.8771,-80.3219
+"A Woman's Care II aka Hialeah Women's Center, Inc.",Hialeah,FL,33013,25.8452,-80.263
+Woman's A Center of Hollywood,Hollywood,FL,33021,26.0117,-80.1824
+A Jacksonville Women's Choice,Jacksonville,FL,32216,30.3322,-81.6556
+All Florida Women's Center,Jacksonville,FL,32216,30.2895,-81.5978
+All Women's Health Center,Jacksonville,FL,32216,30.2785,-81.6027
+Lakeland Women's Health Center,Lakeland,FL,33813,27.984,-81.9565
+A Eve Center,Miami,FL,33166,25.8112,-80.3266
+A Eve of Kendall,Miami,FL,33143,25.6902,-80.3061
+A Woman's Care,Miami,FL,33162,25.9279,-80.1991
+Advanced Woman's Care Center,Miami,FL,33135,25.7647,-80.2396
+Blue Coral Women's Care Inc,Miami,FL,33155,25.748,-80.3145
+University of Miami Hospital -- Department of Obstetrics and Gynecology,Miami,FL,33136,25.7882,-80.217
+Millennium Women Center Inc,Miami,FL,33173,25.7017,-80.3458
+New World Medical Choice,Miami,FL,33135,25.789,-80.2264
+Today's Women's Medical Center,Miami,FL,33133,25.7363,-80.2474
+Women's Health Care Inc / A-1 Women's Health Care,Miami,FL,33135,25.7714,-80.2288
+Gynecologists Diagnostic Center aka Miramar Woman Center,Miramar,FL,33023,25.9847,-80.2106
+Naples Center-Planned Parenthood of Collier County,Naples,FL,34103,26.1824,-81.7924
+Today's Woman Medical Center - A Medical Office for Women,North Miami Beach,FL,33162,25.9253,-80.1822
+Women & Teens Community Health,North Miami Beach,FL,33162,25.9313,-80.1625
+EPOC Clinic,Orlando,FL,32803,28.5644,-81.3696
+Orlando Women's Center,Orlando,FL,32806,28.5289,-81.3804
+Orlando Westside Clinic-Planned Parenthood of Southwest and Central Florida,Orlando,FL,32805,28.5341,-81.4056
+American Family Planning of Pensacola,Pensacola,FL,32504,30.4889,-87.2272
+Aastra Women's Center,Plantation,FL,33317,26.1208,-80.2065
+Venice Woman's Health Center,Port Charlotte,FL,33952,26.9864,-82.1012
+All Women's Clinic,Sarasota,FL,34239,27.3094,-82.5302
+Sarasota Health Center - Planned Parenthood,Sarasota,FL,34236,27.3429,-82.5422
+A Choice for Women,Miami,FL,33183,25.7062,-80.3828
+All Women's Center,St. Petersburg,FL,33713,27.771,-82.6894
+Women's Health Center,St. Petersburg,FL,33710,27.8034,-82.7283
+Pinellas Health Center-Planned Parenthood,St. Petersburg,FL,33702,27.854,-82.6481
+N. FL Women's Hlth & Counseling aka North Florida Women's Services LLC,Tallahassee,FL,32301,30.4322,-84.2358
+"BSSI International, Dr. Michael Benjamin",Tamarac,FL,33321,26.2182,-80.2528
+All Women's Health Center,Tampa,FL,33613,28.0805,-82.4206
+All Women's Health Center,Tampa,FL,33609,27.9447,-82.4988
+Tampa Health Center - Planned Parenthood of Southwest and Central Florida,Tampa,FL,33617,28.0216,-82.3942
+Tampa Women's Health Center,Tampa,FL,33612,28.0696,-82.4356
+Women's Center of Hyde Park,Tampa,FL,33606,27.9395,-82.4658
+Presidential Women's Center,West Palm Beach,FL,33407,26.7604,-80.0995
+Atlanta Women's Medical Center,Atlanta,GA,30342,33.8771,-84.3804
+Dunwoody Women's Medical Group,Atlanta,GA,30341,33.8766,-84.2618
+Feminist Women's Health Center,Atlanta,GA,30329,33.8357,-84.3244
+Summit Medical Assoc.,Atlanta,GA,30324,33.8075,-84.3663
+A Preferred Woman's Health Center - (Augusta),Augusta,GA,30907,33.4997,-82.0806
+Old National Gynecology,College Park,GA,30349,33.5857,-84.4682
+Columbus Women's Health Organization (aka National Women's Health),Columbus,GA,31904,32.5013,-84.959
+Dekalb Gynecology Assoc.,Decatur,GA,30035,33.7144,-84.2177
+Abortion Clinic of Savannah,Savannah,GA,31401,32.0594,-81.0973
+Honolulu Clinic-Planned Parenthood,Honolulu,HI,96814,21.2989,-157.841
+Maui Clinic - Planned Parenthood,Kahului,HI,96732,20.8875,-156.464
+Rosenfield Center-Planned Parenthood,Des Moines,IA,50315,41.5274,-93.6024
+Emma Goldman Clinic,Iowa City,IA,52245,41.6644,-91.5334
+Iowa City Health Center-Planned Parenthood,Iowa City,IA,52246,41.6495,-91.5415
+Dr. Darin Weyhrich,Boise,ID,83702,43.6131,-116.195
+Boise Health Center-Planned Parenthood,Boise,ID,83703,43.6531,-116.255
+Twin Falls Health Center-Planned Parenthood,Twin Falls,ID,83301,42.5575,-114.47
+Planned Parenthood Aurora Health Center,Aurora,IL,60504,41.7595,-88.239
+Women's Health Practice,Champaign,IL,61820,40.1406,-88.2465
+American Women's Center - Chicago,Chicago,IL,60647,41.9317,-87.6881
+Family Planning Associates Medical Group - Washington Blvd,Chicago,IL,60661,41.8832,-87.6453
+Michigan Avenue Center for Health,Chicago,IL,60616,41.8488,-87.6236
+Near North Center-Planned Parenthood,Chicago,IL,60610,41.904,-87.6331
+Ryan Center at University of Chicago,Chicago,IL,60637,41.79,-87.6053
+The UIC Center for Reproductive Health,Chicago,IL,60612,41.8781,-87.6298
+American Women's Center - Des Plaines,Des Plaines,IL,60016,42.0512,-87.887
+Access Health Center,Downers Grove,IL,60516,41.7516,-88.025
+Aanchor Health Center Ltd.,Glen Ellyn,IL,60137,41.8603,-88.032
+The Hope Clinic for Women,Granite City,IL,62040,38.7002,-90.1441
+Whole Women's Health of Peoria (Formerly National Health Care),Peoria,IL,61614,40.7775,-89.6227
+Advantage Health Care Ltd.,Wood Dale,IL,60191,41.9632,-87.9742
+Bloomington Health Center-Planned Parenthood,Bloomington,IN,47403,39.1624,-86.5349
+Clinic for Women,Indianapolis,IN,46222,39.7875,-86.2214
+Indianapolis Women's Center,Indianapolis,IN,46219,39.7844,-86.0641
+Georgetown Health Center-Planned Parenthood,Indianapolis,IN,46268,39.9101,-86.241
+Merrillville Health Center - Planned Parenthood,Merrillville,IN,46410,41.461,-87.3331
+Center for Women's Health,Overland Park,KS,66211,38.9282,-94.6413
+Planned Parenthood Comprehensive Hlth.,Overland Park,KS,66211,38.9309,-94.6367
+EMW Women's Clinic,Lexington,KY,40503,38.0081,-84.5203
+EMW Women's Surgical Center,Louisville,KY,40202,38.2548,-85.7532
+Women's Health Center (Formerly Causeway Medical Clinic),New Orleans,LA,70115,29.9373,-90.1019
+Hope Medical Group for Women,Shreveport,LA,71104,32.4818,-93.7414
+Four Women,Attleboro,MA,02703,41.942,-71.2697
+Brigham and Women's Hospital Family Planning Center,Boston,MA,02115,42.3356,-71.1066
+Greater Boston-Planned Parenthood League of MA,Boston,MA,02215,42.3526,-71.1229
+Office of Boris I. Orkin aka (Reproductive Health Care Services),Brookline,MA,02446,42.3443,-71.1148
+Women's Health Services,Brookline,MA,02446,42.3369,-71.1213
+Pioneer Women's Health,Greenfield,MA,01301,42.5948,-72.5935
+Merrimack Valley Women's Health,Haverhill,MA,01830,42.7673,-71.0472
+Western Massachusetts Heath Center-Planned Parenthood of Western MA,Springfield,MA,01107,44.0458,-122.975
+About Women By Women,Wellesley,MA,02481,42.3162,-71.2452
+Central Massachusetts Health Center-Planned Parenthood,Worcester,MA,01609,42.263,-71.8184
+Annapolis Health Center-Planned Parenthood,Annapolis,MD,21401,38.9765,-76.509
+Gynemed Surgical Center,Baltimore,MD,21237,39.3391,-76.4895
+Baltimore Health Center-Planned Parenthood,Baltimore,MD,21201,39.2939,-76.6199
+Whole Women's Health Baltimore,Baltimore,MD,21236,39.3671,-76.5202
+Women's Health Care,Bethesda,MD,20814,38.993,-77.096
+Metropolitan Family Planning Clinic,College Park,MD,20740,38.9979,-76.9126
+Germantown Reproductive Health Services,Germantown,MD,20874,39.18,-77.2739
+Hagerstown Reproductive Hlth Srvcs,Hagerstown,MD,21740,39.6418,-77.72
+Prince George's Repro. Hlth. Srvcs.,Hyattsville,MD,20783,38.9818,-76.979
+Femi-Care Surgery Center,Owings Mills,MD,21117,39.4137,-76.7776
+Potomac Family Planning Center,Rockville,MD,20850,39.0996,-77.155
+Planned Parenthood of Metropolitian DC,Silver Spring,MD,20910,38.9983,-77.0334
+Metropolitan Family Planning Clinic,Suitland,MD,20746,38.8079,-76.8987
+Family Planning Association Of Maine,Augusta,ME,04332,44.3682,-69.7973
+Mabel Wadsworth Women's Health Center,Bangor,ME,04401,44.8236,-68.7352
+Portland Health Center - Planned Parenthood,Portland,ME,04101,43.6808,-70.2898
+Ann Arbor Health Center-Planned Parenthood,Ann Arbor,MI,48104,42.2553,-83.6984
+East GYN Women's Center,Detroit,MI,48205,42.4499,-82.9601
+Scotsdale Women's Center,Detroit,MI,48219,42.4295,-83.2324
+Summit Medical Center,Detroit,MI,48235,42.4156,-83.2022
+Flint Health Center-Planned Parenthood,Flint,MI,48532,43.0159,-83.7461
+Women's Health Center,Flint,MI,48504,43.0275,-83.7417
+Heritage Clinic for Women,Grand Rapids,MI,49503,42.9628,-85.6609
+Kalamazoo Health Center-Planned Parenthood,Kalamazoo,MI,49006,42.277,-85.6406
+Northland Family Planning Center West,Southfield,MI,48075,42.4682,-83.2393
+Northland Family Planning,Sterling Heights,MI,48310,42.579,-83.0718
+Womancare Inc.,Sterling Heights,MI,48312,42.5512,-83.0105
+Women's Center,Warren,MI,48093,42.5033,-83.0071
+Women's Center,West Bloomfield,MI,48322,42.5388,-83.3597
+Northland Family Planning Center West,Westland,MI,48185,42.3251,-83.3842
+Women's Health Center,Duluth,MN,55802,46.7884,-92.0981
+Dr. Mildred Hanson-Medical Aids,Minneapolis,MN,55404,44.9592,-93.264
+Whole Woman's Health of the Twin Cities,Minneapolis,MN,55404,44.9707,-93.2613
+Robbinsdale Clinic,Robbinsdale,MN,55422,45.0252,-93.3322
+St. Paul Health Center - Vandalia (Planned Parenthood),St. Paul,MN,55114,44.9181,-93.1837
+Central West End Health Center Planned Parenthood,St. Louis,MO,63108,38.6368,-90.1054
+Jackson Women's Health Orginazation,Jackson,MS,39216,32.3346,-90.177
+Planned Parenthood Helena,Helena,MT,59601,46.6027,-112.058
+Blue Mountain Clinic,Missoula,MT,59802,46.8773,-114.013
+Eastowne OB-GYN & Infertility,Chapel Hill,NC,27514,35.9525,-79.006
+Chapel Hill Health Center-Planned Parenthood,Chapel Hill,NC,27514,35.9459,-79.0108
+Carolina Center For Women,Charlotte,NC,28211,35.1896,-80.8058
+Family Reproductive Health,Charlotte,NC,28273,35.1251,-80.8801
+A Preferred Woman's Health Center - (Charlotte),Charlotte,NC,28211,35.199,-80.8036
+A Hallmark Women's Clinic,Fayetteville,NC,28306,35.0234,-78.8939
+Fayetteville Health Center-Planned Parenthood,Fayetteville,NC,28303,35.0793,-78.9594
+A Woman's Choice,Greensboro,NC,27406,36.0365,-79.7991
+Carolina Women Care,High Point,NC,27262,35.965,-80.0132
+Crist Clinic for Women,Jacksonville,NC,28546,34.7664,-77.3864
+A Preferred Woman's Health Center - (Raleigh),Raleigh,NC,27606,35.7595,-78.7291
+A Woman's Choice,Raleigh,NC,27607,35.8144,-78.6942
+Winston-Salem Health Center-Planned Parenthood,Winston-Salem,NC,27103,36.0801,-80.2931
+Red River Women's Clinic,North Fargo,ND,58102,46.8767,-96.7869
+"Abortion Contraception Clinic of NE, aka abortionclinics.org",Bellevue,NE,68005,41.1368,-95.9059
+Planned Parenthood - Lincoln,Lincoln,NE,68516,40.7914,-96.6675
+Northwest Health Center-Planned Parenthood (NW Omaha),Omaha,NE,68134,41.2875,-96.0555
+Concord Feminist Health Center,Concord,NH,03301,43.2018,-71.5352
+"Joan G. Lovering Health Center, Feminist Health Ctr of Portsmouth",Greenland,NH,03840,43.0367,-70.8366
+Manchester OB/GYN - Reproductive Services of Manchester,Manchester,NH,03103,42.9837,-71.435
+Manchester Health Center-Planned Parenthood,Manchester,NH,03104,43.0015,-71.4631
+Cherry Hill Women's Center,Cherry Hill,NJ,08034,39.9268,-74.9969
+East Brunswick Women's Center,Somerset,NJ,08873,40.4113,-74.4219
+Women's Services,East Orange,NJ,07018,40.7518,-74.2136
+American Women's Services,Elizabeth,NJ,07208,40.6794,-74.2136
+Comprehensive Women's Care,Englewood,NJ,07631,40.8838,-73.9847
+Metropolitan Medical Assoc.,Englewood,NJ,07631,40.8943,-73.9727
+Women's Choice,Hackensack,NJ,07601,40.9079,-74.0413
+Options,Howell,NJ,07731,40.1475,-74.2242
+Dr.  Kenneth Chang,Jersey City,NJ,07306,40.7404,-74.0613
+Pilgrim Medical Center Inc.,Montclair,NJ,07042,40.8128,-74.2159
+American Women's Services,Phillipsburg,NJ,08865,40.6889,-75.1993
+Options Gynesurgical Assoc.,Plainfield,NJ,07060,40.6105,-74.4099
+American Women's Services - Princeton Women's Services,Hamilton,NJ,08619,40.3119,-74.6658
+Shrewsbury Center-Planned Parenthood,Shrewsbury,NJ,07702-0095,40.338,-74.0672
+"Alpha University Ob/Gyn, Robert Levitt, MD",Somerset,NJ,08873,40.5053,-74.468
+American Women's Services - Tom's River,Tom's River,NJ,08755,39.9678,-74.233
+Trenton Health Center-Planned Parenthood,Trenton,NJ,08608,39.4808,-84.4502
+Union Ob/Gyn,Union,NJ,07083,40.7017,-74.2638
+American Women's Services,Voorhees,NJ,08043,39.8592,-75.0113
+American Women's Services,Woodbridge,NJ,07095,40.5518,-74.2871
+Albuquerque Surgical Center - Planned Parenthood,Albuquerque,NM,87108,35.0844,-106.586
+Southwestern Women's Options (aka Abortion Acceptance of New Mexico),Albuquerque,NM,87102,35.0896,-106.639
+UNM Center for Reproductive Health,Albuquerque,NM,87106,35.1007,-106.542
+"Hilltop Women's Reproductive Clinic, (aka Hill Top Family Planning) Dr. Theard",Santa Teresa,NM,88008,31.8475,-106.625
+Green Valley Abortion Services aka Nevada Women's Care,Henderson,NV,89074,36.0352,-115.085
+"A to Z Women's Center,Dr. Ramos/ Dr. Levy",Las Vegas,NV,89119,36.1149,-115.131
+A-All Women Care,Las Vegas,NV,89117,36.1241,-115.119
+Birth Control Care Ctr/Dr. Meger - Summit Family Planning,Las Vegas,NV,89104,36.146,-115.143
+Safe and Sound,Las Vegas,NV,89169,36.1326,-115.133
+Desert Inn Women's Clinic,Las Vegas,NV,89169,36.1973,-115.121
+"West End Women's Medical Group, Dr. Damon Stutes",Reno,NV,89502,39.4724,-119.774
+Albany Health Center - Upper Hudson Planned Parenthood,Albany,NY,12206,42.6809,-73.7885
+Office of Michael Afshari,Bayside,NY,11364,40.7343,-73.7549
+"Bronx Lebanon OB/GYN Group, Dr. Benita Gross",Bronx,NY,10457,40.8436,-73.9117
+Dr. Emily's Women's Health Center,Bronx,NY,10455,40.8124,-73.9031
+"Bronx Abortion, aka Abortion Gyn Services",Bronx,NY,10461,40.8552,-73.8435
+Lincoln Medical Center,Bronx,NY,10451,40.8177,-73.924
+The Bronx Center-Planned Parenthood,Bronx,NY,10451,40.8169,-73.9197
+A Brooklyn Woman's Medical,Brooklyn,NY,11201,40.693,-73.9909
+"Brooklyn Women's Services, Dr. Salomon Epstein",Brooklyn,NY,11234,40.6179,-73.9101
+Boro Hall Center-Planned Parenthood,Brooklyn,NY,11201,40.693,-73.9909
+Professional Gynecological Services,Brooklyn,NY,11201,40.6924,-73.986
+Wyckoff Heights Medical Center aka Women's Health Center,Brooklyn,NY,11237,40.704,-73.9187
+Buffalo Womenservice,Buffalo,NY,14214,42.9367,-78.8424
+Abortion Services at Sweet Home Medical,Amherst,NY,14228,43.0284,-78.7997
+Women's Health Horizons aka Abortion Information & Services,East Syracuse,NY,13057,43.0767,-76.0659
+Forest Hill Woman's Services,Flushing,NY,11375,40.7343,-73.8495
+Liberty Women's Health Care,Flushing,NY,11354,40.1614,-81.1267
+New York OB/GYN Assoc,Flushing,NY,11374,43.032,-83.805
+Professional Women's Services Inc. aka Choice Gynecological Services,Jackson Heights,NY,11372,40.7549,-73.8448
+All Women's Medical Pavilion,Kew Gardens,NY,11415,40.7214,-73.8484
+Women's Choice,Hauppauge,NY,11788,40.8076,-73.2544
+Hempstead Center-Planned Parenthood of Nassau,Hempstead,NY,11550,40.7105,-73.6132
+Hudson Peconic-Planned Parenthood,Hudson,NY,12534,42.2585,-73.7667
+Dr. David Shobin - Huntington Women's Health,Huntington Station,NY,11746,40.8298,-73.4116
+Ithaca Health Center - Medical Offices of Planned Parenthood,Ithaca,NY,14850,42.4397,-76.5025
+Roosevelt Women's Medical Care,Jackson Heights,NY,11372,40.7475,-73.8871
+"Women's Services, Dr. Salomon Epstein",Jackson Heights,NY,11372,40.7475,-73.8909
+Comprehensive Women's Health/Dr. Mahendranauth Sohan,Queens,NY,11417,40.6828,-73.8348
+"Choices Women's Medical Center, Dr. Evans Crevecoeur Dr. George Mcmillan",Jamaica - Queens,NY,11435,40.7505,-73.9369
+All Womens Care,Manhasset,NY,11030,40.7722,-73.7034
+South Orange GYN,Monroe,NY,10950,41.3575,-74.1904
+New Rochelle Center-Planned Parenthood,New Rochelle,NY,10801,40.9094,-73.7817
+"Columbia University Medical Center, Division of Family Planning and Preventive Services",New York,NY,10032,40.8415,-73.9411
+Dr. Ahmed Fahmy,New York,NY,10016,40.7467,-73.9834
+Eastside Gynecology Assoc,New York,NY,10017,40.7642,-73.9628
+Mt. Sinai Medical Center,New York,NY,10029,40.7904,-73.9538
+Parkmed Eastern Women's Center,New York,NY,10017,40.7499,-73.972
+Sidney Hillman/Phillips Family Practice (aka Institute for Family Health),New York,NY,10003,40.6502,-73.9652
+Margaret Sanger Center-Planned Parenthood,New York,NY,10012,40.7256,-73.9937
+"Westside Women's Medical Pavillion, Dr. Gluck",New York,NY,10023,40.7692,-73.9826
+Wheatfield Office-Planned Parenthood,Niagara Falls,NY,14304,43.0846,-78.9393
+Planned Parenthood of the North Country,Plattsburgh,NY,12901,44.6972,-73.4572
+Poughkeepsie Health Center - Planned Parenthood,Poughkeepsie,NY,12601,41.7009,-73.9295
+"The Center for Menstrual Disorders & Reproductive Choice, Dr Wortman",Rochester,NY,14618,43.1195,-77.595
+Freedom of Choice,Rochester,NY,14620,43.1179,-77.6234
+Rochester Center-Planned Parenthood,Rochester,NY,14605,43.1605,-77.5998
+South Avenue Women's Services - Highland Hospital,Rochester,NY,14620,43.136,-77.6075
+Schenectady Center-Planned Parenthood,Schenectady,NY,12307,42.8014,-73.9287
+Smithtown Center-Planned Parenthood,Smithtown,NY,11787,40.8539,-73.1972
+"Stony Brook Women's Health Svc, Dr. David Shobin",Smithtown,NY,11787,40.8313,-73.1979
+Syracuse Center-Planned Parenthood,Syracuse,NY,13210,43.0469,-76.1336
+Troy Health Center - Upper Hudson Planned Parenthood,Troy,NY,12180,42.7315,-73.6914
+Utica Center-Planned Parenthood,Utica,NY,13502,43.0943,-75.2468
+"Aphrodite Medical, Access for Women",Vestal,NY,13851,42.0857,-76.0541
+All Women's Health & Medical Srvcs.,White Plains,NY,10605,41.025,-73.7652
+White Plains Center-Planned Parenthood,White Plains,NY,10601,41.0403,-73.7887
+Women's Health Resource,Yonkers,NY,10710,40.9643,-73.8381
+Akron Women's Medical Group,Akron,OH,44304,41.0739,-81.4916
+Northeast Ohio Women's Center,Cuyahoga Falls,OH,44223,41.0292,-81.5193
+Elizabeth Campbell Medical Center-Planned Parenthood,Cincinnati,OH,45219,39.1236,-84.5079
+Bedford Health Center - Planned Parenthood Northeast Ohio,Bedford Heights,OH,44146,41.4092,-81.5414
+Preterm Cleveland,Cleveland,OH,44120,41.4837,-81.599
+Founder's Women's Health Center,Columbus,OH,43205,39.9657,-82.9676
+East Columbus Women's Center - Planned Parenthood Central Ohio,Columbus,OH,43213,39.9562,-82.9112
+Women's Medical Center,Dayton,OH,45429,39.6892,-84.1412
+Toledo Women's Center (Capital Care Network Toledo),Toledo,OH,43612,41.6928,-83.569
+Abortion Surgery Center-Dr. Burns,Norman,OK,73069,35.2063,-97.4786
+Reproductive Services of Tulsa,Tulsa,OK,74135,36.1162,-95.9064
+Bend Health Center - Planned Parenthood (aka Central Oregon Center-Planned Parenthood),Bend,OR,97701,44.0729,-121.305
+Eugene Health Center - Planned Parenthood,Eugene,OR,97403,44.0445,-123.102
+Downtown Women's Center Inc.,Portland,OR,97205,45.5211,-122.682
+Lovejoy Surgicenter,Portland,OR,97210,45.5296,-122.703
+Salem Center-Planned Parenthood,Salem,OR,97305,44.9587,-122.986
+Allentown Women's Center,Bethlehem,PA,18017,40.6084,-75.4902
+Allentown Medical Center-Planned Parenthood,Allentown,PA,18101,40.6022,-75.4756
+Hillcrest Women's Medical Center,Harrisburg,PA,17110,40.2883,-76.9043
+Philadelphia Women's Center,Philadelphia,PA,19106,39.9536,-75.1527
+Far Northeast Health Center-Planned Parenthood,Philadelphia,PA,19154,40.1037,-75.0004
+Locust Street Surgical Center - Planned Parenthood,Philadelphia,PA,19107,39.9477,-75.1606
+Allegheny Reproductive Health Ctr,Pittsburgh,PA,15206,30.1598,-85.5825
+Pittsburgh Women's Health Services - PP Western Pennsylvania,Pittsburgh,PA,15222,40.4434,-79.9968
+Reading Medical Center-Planned Parenthood,Reading,PA,19602,40.3338,-75.9302
+Warminster Health Center-Planned Parenthood,Warminster,PA,18974,40.2007,-75.0862
+West Chester Surgical Center - Planned Parenthood,West Chester,PA,19382,39.9569,-75.6102
+"York Center-Planned Parenthood, aka. Planned Parenthood of Central PA",York,PA,17401,39.9524,-76.7253
+Women's Medical Center,Cranston,RI,02905,41.7791,-71.4009
+Providence Health Center-Planned Parenthood of Rhode Island,Providence,RI,02903,41.8164,-71.408
+Charleston Women's Medical Center,Charleston,SC,29407,32.7979,-79.9991
+Columbia Health Center-Planned Parenthood,Columbia,SC,29204,34.0151,-81.0034
+Greenville Women' s Clinic,Greenville,SC,29605,34.812,-82.4192
+Sioux Falls Clinic-Planned Parenthood,Sioux Falls,SD,57106,43.5148,-96.8064
+"Bristol Obstetrics Gynecology & Family Planning PC, (aka Bristol Regional Women's Center)",Bristol,TN,37620,36.5929,-82.2198
+Knoxville Ctr for Reproductive Hlth,Knoxville,TN,37916,35.9593,-83.9311
+Choices Memphis Center for Reproductive Health,Memphis,TN,38104,35.1428,-90.0018
+Memphis Health Center-Planned Parenthood,Memphis,TN,38112,35.1395,-89.9797
+P.P. of Mid & East TN,Nashville,TN,37203,36.162,-86.8028
+Women's Center,Nashville,TN,37222,36.0822,-86.7301
+Austin Women's Health Center (Brookside Women's Medical Center),Austin,TX,78704,30.3086,-97.7549
+Planned Parenthood South Austin,Austin,TX,78704,30.2212,-97.7628
+Southwestern Women's Surgery Center,Dallas,TX,75243,32.8945,-96.7525
+"Hilltop Women's Reproductive Center, Dr. Theard",El Paso,TX,79902,31.7711,-106.494
+Reproductive Services,El Paso,TX,79902,31.7661,-106.486
+Southwest Fort Worth Health Center - Planned Parenthood,Fort Worth,TX,76132,32.742,-97.3374
+Texas Ambulatory Surgical Center (Aaron's Women's Clinic),Houston,TX,77008,29.809,-95.4104
+"Houston Women's Clinic, Dr. Bernard Rosenfeld",Houston,TX,77004,29.7297,-95.3841
+Planned Parenthood Center For Choices Surgical Services,Houston,TX,77023,29.7258,-95.335
+Suburban Women's Clinic,Houston,TX,77098,29.7339,-95.4249
+Suburban Women's Medical Center,Houston,TX,77090,30.019,-95.4447
+Whole Women's Health  of McAllen,McAllen,TX,78501,26.1966,-98.2358
+Alamo Women's Reproductive Services,San Antonio,TX,78229,29.5222,-98.5712
+Planned Parenthood - Babcock Clinic,San Antonio,TX,78229,29.4718,-98.5348
+Whole Women's Health,San Antonio,TX,78222,29.3754,-98.4157
+Metro Health Center (Planned Parenthood),Salt Lake City,UT,84102,40.7658,-111.863
+Wasatch Women's Center,Salt Lake City,UT,84107,40.6876,-111.871
+Alexandria Women's Health Clinic,Alexandria,VA,22304,38.8138,-77.1375
+Annandale Women & Family Center,Alexandria,VA,22314,38.8073,-77.0798
+Charlottesville Medical Center for Women,Charlottesville,VA,22901,38.0737,-78.4878
+Charlottesville Health Center-Planned Parenthood,Charlottesville,VA,22901,38.0814,-78.4921
+American Women's Services (Virginia Health Group),Fairfax,VA,22031-5216,38.8664,-77.2324
+Falls Church Health Care Center,Falls Church,VA,22046,38.8793,-77.183
+Peninsula Medical Center for Women,Newport News,VA,23601,37.0536,-76.4613
+A Tidewater Womens Health Clinic,Norfolk,VA,23502,36.853,-76.2327
+A Capital Women's Health,Richmond,VA,23229,37.6049,-77.5686
+Richmond Medical Center For Women,Richmond,VA,23220,37.5547,-77.4749
+Richmond Health Center-Virginia League for Planned Parenthood,Richmond,VA,23221,37.5594,-77.4902
+Roanoke Health Center-Planned Parenthood,Roanoke,VA,24017,37.3118,-80.0065
+Roanoke Medical Center for Women,Roanoke,VA,24016,37.2628,-79.9438
+Newtown Medical Center-Planned Parenthood,Virginia Beach,VA,23462,36.8576,-76.1768
+Virginia Women's Wellness,Virginia Beach,VA,23452,36.8414,-76.0856
+Northern New England Planned Parenthood,Burlington,VT,05401,44.4812,-73.1992
+Rutland Health Center-Planned Parenthood,Rutland,VT,05701,43.6142,-72.9738
+Planned Parenthood - Bellingham Clinic,Bellingham,WA,98225,48.7505,-122.471
+Bremerton Health Center-Planned Parenthood,Bremerton,WA,98310,47.6065,-122.637
+Everett Health Center-Planned Parenthood,Everett,WA,98201,47.9755,-122.209
+Kennewick Health Center-Planned Parenthood,Kennewick,WA,99336,46.2315,-119.222
+Olympia Health Center-Planned Parenthood,Olympia,WA,98502,47.0435,-122.897
+Cedar River Clinic,Renton,WA,98057,47.4808,-122.218
+All Women's Health North,Seattle,WA,98115,47.7001,-122.325
+Seattle Health Center-Planned Parenthood,Seattle,WA,98122,47.6176,-122.305
+"Seattle Medical Clinic,  Eileen Gibbons",Seattle,WA,98101,47.6087,-122.336
+First Hill Health Center - Planned Parenthood,Seattle,WA,98104,47.6099,-122.323
+Indiana Health Center - a.k.a. Planned Parenthood of the Inland Northwest,Spokane,WA,99205,47.6751,-117.408
+All Women's Health Clinic,Tacoma,WA,98418,47.2243,-122.433
+Planned Parenthood of the Greater NW,Tacoma,WA,98405,47.2546,-122.452
+Cedar River Clinic,Tacoma,WA,98405,47.2488,-122.451
+Yakima Health Center - Planned Parenthood of Central Washington,Yakima,WA,98902,46.5925,-120.524
+Madison E (CRHC)Planned Parenthood,Madison,WI,53704,43.1231,-89.3246
+Affiliated Medical Services,Milwaukee,WI,53202,43.0485,-87.8964
+Milwaukee-Jackson Center-Planned Parenthood of Wisconsin,Milwaukee,WI,53202,43.0343,-87.9034
+Women's Health Center of West Virginia,Charleston,WV,25302,38.3639,-81.6427
+"Kanawha Surgi-Center, Dr. Gorli Harish",Charleston,WV,25304-2042,38.3207,-81.5802
+Emerg-A-Care,Jackson,WY,83001,43.4739,-110.785
