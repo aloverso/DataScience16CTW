@@ -6,7 +6,8 @@ from bs4 import BeautifulSoup
 import numpy as np
 from math import radians, sin, cos, asin, sqrt
 import pandas
-
+from waitingtime import abbrevs, waitingtime
+from totaltimes import get_total_times
 '''
 writes ablocs.csv
 contains each clinic name, location, and latitude/longitude
@@ -147,13 +148,35 @@ def get_drivetime_data():
 
 	write_drivetimes()
 
-# def write_totaltime_data():
-# 	for dt in cities.drivetime:
-
+def write_totaltime_data():
+	# for lat, lng:
+	# 	state_abbrev = cities.state[]
+	cities = pandas.read_csv('cities.csv') 
+	tt_list = []
+	hn_list = []
+	tdt_list = []
+	counter = 0	
+	for index, row in cities.iterrows():
+		dt = row.drivetime/60
+		wt = waitingtime[abbrevs[row.state]]
+		total_time, hotel_night, total_dt = get_total_times(dt, wt)
+		tt_list.append(total_time)
+		hn_list.append(hotel_night)
+		tdt_list.append(total_dt)
+		if hotel_night > 0:
+			# print row
+		 	counter += 1
+	print counter
+		#print index
+	cities['totaltime'] = pandas.Series(tt_list, index=cities.index)
+	cities['hotelnights'] = pandas.Series(hn_list, index=cities.index)
+	cities['totaldrivetime'] = pandas.Series(tdt_list, index=cities.index)
+	cities.to_csv('cities.csv')
 
 if __name__ == "__main__":
 	# uncomment as needed
-
+	write_totaltime_data()
 	# get_clinic_location_data()
 	# get_traplaw_numbers_data()
 	# get_drivetime_data()
+
