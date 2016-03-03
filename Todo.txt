@@ -1,0 +1,5 @@
+drive time/dist
+
+1. state avg population
+2. (job wage) living cost
+                   
