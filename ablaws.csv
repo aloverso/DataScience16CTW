@@ -1,52 +1,52 @@
-state,numlaws
-Alabama,22
-Alaska,7
-Arizona,31
-Arkansas,17
-California,6
-Colorado,18
-Connecticut,7
-Delaware,0
-District Of Columbia,1
-Florida,29
-Georgia,15
-Hawaii,8
-Idaho,10
-Illinois,15
-Indiana,27
-Iowa,25
-Kansas,16
-Kentucky,26
-Louisiana,13
-Maine,10
-Maryland,13
-Massachusetts,18
-Michigan,43
-Minnesota,29
-Mississippi,22
-Missouri,96
-Montana,16
-Nebraska,13
-Nevada,1
-New Hampshire,18
-New Jersey,13
-New Mexico,10
-New York,37
-North Carolina,16
-North Dakota,10
-Ohio,20
-Oklahoma,22
-Oregon,9
-Pennsylvania,15
-Rhode Island,24
-South Carolina,23
-South Dakota,16
-Tennessee,23
-Texas,81
-Utah,3
-Vermont,3
-Virginia,37
-Washington,28
-West Virginia,47
-Wisconsin,17
-Wyoming,3
+state,numlaws,test
+Alabama,22,0
+Alaska,7,24
+Arizona,31,72
+Arkansas,17,0
+California,6,24
+Colorado,18,72
+Connecticut,7,0
+Delaware,0,24
+District Of Columbia,1,72
+Florida,29,0
+Georgia,15,24
+Hawaii,8,72
+Idaho,10,0
+Illinois,15,24
+Indiana,27,72
+Iowa,25,0
+Kansas,16,24
+Kentucky,26,72
+Louisiana,13,0
+Maine,10,24
+Maryland,13,72
+Massachusetts,18,0
+Michigan,43,24
+Minnesota,29,72
+Mississippi,22,0
+Missouri,96,24
+Montana,16,72
+Nebraska,13,0
+Nevada,1,24
+New Hampshire,18,72
+New Jersey,13,0
+New Mexico,10,24
+New York,37,72
+North Carolina,16,0
+North Dakota,10,24
+Ohio,20,72
+Oklahoma,22,0
+Oregon,9,24
+Pennsylvania,15,72
+Rhode Island,24,0
+South Carolina,23,24
+South Dakota,16,72
+Tennessee,23,0
+Texas,81,24
+Utah,3,72
+Vermont,3,0
+Virginia,37,24
+Washington,28,72
+West Virginia,47,0
+Wisconsin,17,24
+Wyoming,3,72
