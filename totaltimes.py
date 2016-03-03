@@ -4,15 +4,20 @@ from waitingtime import waitingtime
 def get_total_times(drivetime, clinictime):
 	if clinictime == 0:
 		return drivetime*2, 0, drivetime*2
-	elif drivetime < 5:
-		if drivetime > 3 and drivetime < 5 and clinictime==18:
+	elif drivetime < 3:
+		return drivetime*4, 0, drivetime*4
+		
+
+	elif drivetime > 3 and drivetime < 5:
+		if clinictime==18 or clinictime==24:
 			return drivetime*2+clinictime, 1, drivetime*2
 		else:
-			return drivetime*2+clinictime, 0, drivetime*4
+			return drivetime*4, 0, drivetime*4
+
 	elif clinictime < 48:
 		return drivetime*2+clinictime, 1, drivetime*2
-	elif drivetime < 9:
-		return drivetime*2+clinictime, 0, drivetime*4
+	# elif drivetime < 9:
+	# 	return drivetime*4, 0, drivetime*4
 	elif clinictime == 48:
 		return drivetime*2+clinictime, 2, drivetime*2
 	else:

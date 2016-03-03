@@ -34,7 +34,6 @@ def plot_clinic_locations():
 	# Define our longitude and latitude points
 	# We have to use .values because of a wierd bug when passing pandas data
 	# to basemap.
-	# x,y = m(cities['lng'].values, cities['lat'].values)
 
 	# Plot them using round red markers of size 6
 	for lat in data.latitude:
@@ -152,14 +151,23 @@ def plot_drivetime_heatmap():
 	states_shp_info = m.readshapefile('shapefiles/st99_d00', 'states',drawbounds=True)
 
 	x,y = m(cities['lng'].values, cities['lat'].values)
-	vals = cities['drivetime'].values
-	vals = [v/60.0 for v in vals] # values are hours
+	vals = cities['totaltime'].values
+	vals = [v for v in vals] # values are hours
 
-	m.scatter(x,y, c=vals, cmap='jet', vmin=0, vmax=5, lw=0)
+	m.scatter(x,y, c=vals, cmap='jet', vmin=0, vmax=10, lw=0)
 	m.drawstates(linewidth=0)
 	plt.colorbar()
 
 	# Show the map
 	plt.show()
 
-plot_drivetime_heatmap()
+if __name__ == "__main__":
+	# uncomment as needed
+
+	plot_drivetime_heatmap()
+	#plot_state_traplaws()
+	#plot_clinic_locations()
+	# cities['drivetime'].dropna()
+	# plt.hist(cities['drivetime'].dropna(), bins=range(int(min(cities.drivetime.dropna())), int(max(cities.drivetime.dropna())) + 15, 15))
+	# plt.axis([0,600,0,4500])
+	# plt.show()
