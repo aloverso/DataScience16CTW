@@ -34,7 +34,7 @@ def plot_clinic_locations():
 	# Define our longitude and latitude points
 	# We have to use .values because of a wierd bug when passing pandas data
 	# to basemap.
-	x,y = m(cities['lng'].values, cities['lat'].values)
+	# x,y = m(cities['lng'].values, cities['lat'].values)
 
 	# Plot them using round red markers of size 6
 	for lat in data.latitude:
