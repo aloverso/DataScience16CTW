@@ -155,10 +155,13 @@ def plot_drivetime_heatmap():
 	vals = cities['totaltime'].values
 	vals = [v for v in vals] # values are hours
 
-	m.scatter(x,y, c=vals, cmap='jet', vmin=0, vmax=10, lw=0)
+	m.scatter(x,y, c=vals, cmap='jet', vmin=0, vmax=12, lw=0)
 	m.drawstates(linewidth=0)
 	plt.colorbar()
 
+	#plt.title("Number of Nights You'll Have to Stay in a Hotel if You Need an Abortion (based on hometown city)")
+
+	plt.title("Total Time Spent away from Hometown when Getting Abortion (including driving time)")
 	# Show the map
 	plt.show()
 
