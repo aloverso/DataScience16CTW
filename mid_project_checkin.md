@@ -28,11 +28,11 @@ We also got related interesting data sets which may be interested to be plotted 
 Also, found an alternative tool to plot more specific info map. 
 The below is the example of the heat map of the percentage of counties without abortion providers in each state.
 
-![Percentage of Counties w/o abortion provider](Percentage_Counties_Without_Provider.svg)
+![Percentage of Counties w/o abortion provider](percent_no_provider.png)
 
 Example of employment rate in each county heat map. We would reference this info with abortion data later to explore the potential relationships
 
-![Unemployment map](Unemployment.svg)
+![Unemployment map](unemployment.png)
 
 
 ## Going Forward:

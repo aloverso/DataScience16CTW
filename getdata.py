@@ -185,7 +185,7 @@ def write_totaltime_data():
 	cities['totaltime'] = pandas.Series(tt_list, index=cities.index)
 	cities['hotelnights'] = pandas.Series(hn_list, index=cities.index)
 	cities['totaldrivetime'] = pandas.Series(tdt_list, index=cities.index)
-	cities.to_csv('cities2.csv')
+	cities.to_csv('cities.csv')
 
 def write_closest_clinic():
 	clinic_lat_list = []
@@ -243,10 +243,10 @@ def write_hotel_cost():
 		print index
 	cities['avghotelcost'] = pandas.Series(hotelcost_avglist, index=cities.index)	
 	cities['minhotelcost'] = pandas.Series(hotelcost_minlist, index=cities.index)	
-	cities.to_csv('cities2.csv')
+	cities.to_csv('cities.csv')
 
 if __name__ == "__main__":
-	cities = pandas.read_csv('cities2.csv')
+	cities = pandas.read_csv('cities.csv')
 	data = pandas.read_csv('ablocs.csv')
 	# uncomment as needed
 
