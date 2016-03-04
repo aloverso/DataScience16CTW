@@ -3,12 +3,10 @@
 import csv
 # from BeautifulSoup import BeautifulSoup
 from bs4 import BeautifulSoup 
-# Read in unemployment rates
 
 from constant import abbrevs
 
 plot_dict = {}
-# min_value = 100; max_value = 0
 abbrevs['DC'] = "Washington"
 
 abbrevs_inverted = dict((v,k) for k,v in abbrevs.iteritems())
@@ -55,11 +53,7 @@ for p in paths:
 		if p['id'] not in ["State_Lines", "separator"]:
 			rate = plot_dict[p['id']]
 			color_class = int((len(colors)-1) * float(rate - min_rate) / float(max_rate - min_rate))
-			# print "color_class"
-			# print color_class
 			color = colors[color_class]
-			# print "color"
-			# print color
 			p['style'] = path_style + color
  	except:
  		counter += 1
