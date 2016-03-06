@@ -139,6 +139,7 @@ def plot_state_traplaws():
 
 	make_statemap(d)
 
+
 # plot a heatmap of driving time to nearest clinic for each state
 def plot_drivetime_heatmap():
 
@@ -157,19 +158,40 @@ def plot_drivetime_heatmap():
 
 	#plt.title("Number of Nights You'll Have to Stay in a Hotel if You Need an Abortion (based on hometown city)")
 
+	plt.title("Total Time Spent away from Hometown when Getting Abortion (including driving time)")
+	# Show the map
+	plt.show()
+def plot_potential_wage_loss_heatmap():
+
+	m = Basemap(llcrnrlon=-119,llcrnrlat=22,urcrnrlon=-64,urcrnrlat=49,  
+	                projection='lcc',lat_1=33,lat_2=45,lon_0=-95)
+
+	states_shp_info = m.readshapefile('shapefiles/st99_d00', 'states',drawbounds=True)
+
+	x,y = m(cities['lng'].values, cities['lat'].values)
+	# vals = (cities['totaltime'].values)*cities['avg_wkly_wage']
+	vals = cities['totaltime']*cities['avg_wkly_wage']
+
+	vals = [v for v in vals] # values are hours
+
+	m.scatter(x,y, c=vals, cmap='jet', vmin=0, vmax=3000, lw=0)
+	m.drawstates(linewidth=0)
+	plt.colorbar()
+
+	#plt.title("Number of Nights You'll Have to Stay in a Hotel if You Need an Abortion (based on hometown city)")
+
 	#plt.title("Total Time Spent away from Hometown when Getting Abortion (including driving time)")
 	#plt.title("Driving Time in Hours from City to Closest Clinic")
 	# Show the map
 	plt.show()
-
 if __name__ == "__main__":
 
-	data = pandas.read_csv('ablocs.csv') 
+	# data = pandas.read_csv('ablocs.csv') 
 	cities = pandas.read_csv('cities.csv')
-	lawsdata = pandas.read_csv('ablaws.csv')
+	# lawsdata = pandas.read_csv('ablaws.csv')
 	# uncomment as needed
 
-	plot_drivetime_heatmap()
+	# plot_drivetime_heatmap()
 	#plot_state_traplaws()
 	#plot_clinic_locations()
 	# cities['drivetime'].dropna()

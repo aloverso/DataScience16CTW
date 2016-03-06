@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 import numpy as np
 from math import radians, sin, cos, asin, sqrt
 import pandas
-from waitingtime import abbrevs, waitingtime
+from constant import abbrevs, waitingtime
 from totaltimes import get_total_times
 '''
 writes ablocs.csv

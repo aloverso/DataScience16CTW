@@ -1,4 +1,4 @@
-from waitingtime import waitingtime
+from constant import waitingtime
 
 # drive time in hours
 def get_total_times(drivetime, clinictime):
