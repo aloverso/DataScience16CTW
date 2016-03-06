@@ -6,10 +6,6 @@ import numpy as np
 from matplotlib.colors import rgb2hex
 from matplotlib.patches import Polygon
 
-data = pandas.read_csv('ablocs.csv') 
-cities = pandas.read_csv('cities.csv')
-lawsdata = pandas.read_csv('ablaws.csv')
-
 def plot_clinic_locations():
 	fig = plt.figure(figsize=(20,10))
 
@@ -34,6 +30,7 @@ def plot_clinic_locations():
 	# Define our longitude and latitude points
 	# We have to use .values because of a wierd bug when passing pandas data
 	# to basemap.
+	#x,y = m(cities['lng'].values, cities['lat'].values)
 
 	# Plot them using round red markers of size 6
 	for lat in data.latitude:
@@ -154,14 +151,22 @@ def plot_drivetime_heatmap():
 	vals = cities['totaltime'].values
 	vals = [v for v in vals] # values are hours
 
-	m.scatter(x,y, c=vals, cmap='jet', vmin=0, vmax=10, lw=0)
+	m.scatter(x,y, c=vals, cmap='jet', vmin=0, vmax=12, lw=0)
 	m.drawstates(linewidth=0)
 	plt.colorbar()
 
+	#plt.title("Number of Nights You'll Have to Stay in a Hotel if You Need an Abortion (based on hometown city)")
+
+	#plt.title("Total Time Spent away from Hometown when Getting Abortion (including driving time)")
+	#plt.title("Driving Time in Hours from City to Closest Clinic")
 	# Show the map
 	plt.show()
 
 if __name__ == "__main__":
+
+	data = pandas.read_csv('ablocs.csv') 
+	cities = pandas.read_csv('cities.csv')
+	lawsdata = pandas.read_csv('ablaws.csv')
 	# uncomment as needed
 
 	plot_drivetime_heatmap()
