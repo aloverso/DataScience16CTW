@@ -245,12 +245,79 @@ def write_hotel_cost():
 	cities['minhotelcost'] = pandas.Series(hotelcost_minlist, index=cities.index)	
 	cities.to_csv('cities.csv')
 
+def make_statewide_avgs(cities):
+	d = {}
+
+
+	for index,row in cities.iterrows():
+		d.setdefault(row.state, {})
+
+		d[row.state].setdefault("drivetime", 0)
+		d[row.state].setdefault("totaltime", 0)
+		d[row.state].setdefault("hotelnights", 0)
+		d[row.state].setdefault("totaldrivetime", 0)
+		d[row.state].setdefault("avghotelcost", 0)
+		d[row.state].setdefault("minhotelcost", 0)
+		d[row.state].setdefault("gasprice", 0)
+		d[row.state].setdefault("avghrwage", 0)
+		d[row.state].setdefault("counter", 0)
+		d[row.state]["counter"] += 1
+		d[row.state]["drivetime"] += row.drivetime
+		d[row.state]["totaltime"] += row.totaltime
+		d[row.state]["hotelnights"] += row.hotelnights  
+		d[row.state]["totaldrivetime"] += row.totaldrivetime 
+		d[row.state]["avghotelcost"] += row.avghotelcost 
+		d[row.state]["minhotelcost"] += row.minhotelcost 
+		d[row.state]["gasprice"] += row.gasprice
+		d[row.state]["avghrwage"] += row.avg_wkly_wage
+
+		print index
+
+	statelist = sorted(d.keys())
+
+	def get_attr(attr):
+		l = []
+		for state, sd in sorted(d.iteritems()):
+			l.append(float(sd[attr])/sd["counter"])
+		return l
+
+	stateavgs = pandas.DataFrame({
+		"state" : statelist,
+		"drivetime" : get_attr("drivetime"),
+		"totaltime" : get_attr("totaltime"),
+		"hotelnights" : get_attr("hotelnights"),
+		"totaldrivetime" : get_attr("totaldrivetime"),
+		"avghotelcost" : get_attr("avghotelcost"),
+		"minhotelcost" : get_attr("minhotelcost"),
+		"gasprice" : get_attr("gasprice"),
+		"avghrwage" : get_attr("avghrwage")
+		})
+	stateavgs.to_csv("stateavgs.csv")
+
 if __name__ == "__main__":
 	cities = pandas.read_csv('cities.csv')
 	data = pandas.read_csv('ablocs.csv')
 	# uncomment as needed
+	#cities = cities.dropna()
+	#print sum(cities["drivetime"].isnull())
 
-	write_hotel_cost()
+	attrs = ["drivetime", "totaltime","hotelnights","totaldrivetime","avghotelcost","minhotelcost","gasprice", "avg_wkly_wage"]
+
+	grouplist = []
+
+	for name, group in cities.groupby("state"):
+		for attr in attrs:
+			group[attr] = group[attr].fillna(group[attr].median())
+		grouplist.append(group)
+
+	frames = pandas.concat(grouplist)
+	print frames.head()
+
+	print sum(frames["drivetime"].isnull())
+	make_statewide_avgs(frames)
+
+
+	#write_hotel_cost()
 	#write_totaltime_data()
 	#write_closest_clinic()
 	# get_clinic_location_data()
