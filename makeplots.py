@@ -162,6 +162,18 @@ def plot_drivetime_heatmap():
 	# Show the map
 	plt.show()
 
+def make_ranks_vals(attr):
+	s = []
+	for x in cities[attr]:
+		if x > 0:
+			s.append(x)
+
+	s.sort()
+	print s
+	for i in range(len(s)):
+		plt.plot(i,s[i],'ro')
+	plt.show()
+
 if __name__ == "__main__":
 
 	data = pandas.read_csv('ablocs.csv') 
@@ -169,7 +181,8 @@ if __name__ == "__main__":
 	lawsdata = pandas.read_csv('ablaws.csv')
 	# uncomment as needed
 
-	plot_drivetime_heatmap()
+	make_ranks_vals("totaltime")
+	#plot_drivetime_heatmap()
 	#plot_state_traplaws()
 	#plot_clinic_locations()
 	# cities['drivetime'].dropna()
