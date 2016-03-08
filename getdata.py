@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 import numpy as np
 from math import radians, sin, cos, asin, sqrt
 import pandas
-from waitingtime import abbrevs, waitingtime
+from waitingtime import abbrevs, waitingtime, minabcost
 from totaltimes import get_total_times
 from amadeus import Hotels
 import geopy
@@ -113,16 +113,20 @@ def llf(lat, lon):
 
 # gets the drive time between two points using their lat/long coordinates
 # makes google maps API call
-def get_drive_time(lat1, lon1, lat2, lon2):
-	apikey = "XXXXXXXXXXXXXXXXXXXXXX" # put key here
+def get_drive_time(lat1, lon1, lat2, lon2, item):
+	apikey = "XXXXXXXXXXXXXXXXXXXXX" # put key here
 	url = "https://maps.googleapis.com/maps/api/distancematrix/json?" + \
 		"origins=" + llf(lat1,lon1) + \
 		"&destinations=" + llf(lat2,lon2) + \
 		"&key=" + apikey
 	result= json.load(urllib.urlopen(url))
 	try:
-		driving_time = result['rows'][0]['elements'][0]['duration']['value']
-		return driving_time
+		res = result['rows'][0]['elements'][0][item]['value']
+		#print res*00.000621371
+		if item == "distance":
+			return res*0.000621371 # convert m to miles
+		elif item == "duration":
+			return res/60 # convert sec to minutes
 	except:
 		print "==============="
 		print lat1, lon1
@@ -140,15 +144,18 @@ def get_drivetime_data():
 	data = pandas.read_csv('ablocs.csv') 
 	cities = pandas.read_csv('cities.csv') 
 
-	f = csv.writer(open("drivetimes.csv", "wb+"))
+	f = csv.writer(open("drivedist.csv", "wb+"))
 
-	for lat in cities.lat:
-		lon = cities.lng[cities.lat==lat].iloc[0]
-		closest = get_closest(lat,lon)
+	for index, row in cities.iterrows():
+		if index < 14880:
+			continue
+		lat = row.lat
+		lon = row.lng
+		#closest, state = get_closest(lat,lon)
 		# print lat,lon
 		# print closest[0], closest[1]
-		drivetime = get_drive_time(lat,lon,closest[0],closest[1])
-		f.writerow([drivetime/60])
+		drivetime = get_drive_time(lat,lon,row.cliniclat,row.cliniclng, "distance")
+		f.writerow([drivetime])
 		print lat, lon
 
 def write_totaltime_data():
@@ -185,7 +192,7 @@ def write_totaltime_data():
 	cities['totaltime'] = pandas.Series(tt_list, index=cities.index)
 	cities['hotelnights'] = pandas.Series(hn_list, index=cities.index)
 	cities['totaldrivetime'] = pandas.Series(tdt_list, index=cities.index)
-	cities.to_csv('cities.csv')
+	cities.to_csv('cities_new.csv')
 
 def write_closest_clinic():
 	clinic_lat_list = []
@@ -245,40 +252,29 @@ def write_hotel_cost():
 	cities['minhotelcost'] = pandas.Series(hotelcost_minlist, index=cities.index)	
 	cities.to_csv('cities.csv')
 
-def make_statewide_avgs(cities):
+def make_statewide_avgs():
 	d = {}
-
 
 	for index,row in cities.iterrows():
 		d.setdefault(row.state, {})
 
-		d[row.state].setdefault("drivetime", 0)
-		d[row.state].setdefault("totaltime", 0)
-		d[row.state].setdefault("hotelnights", 0)
-		d[row.state].setdefault("totaldrivetime", 0)
-		d[row.state].setdefault("avghotelcost", 0)
-		d[row.state].setdefault("minhotelcost", 0)
-		d[row.state].setdefault("gasprice", 0)
-		d[row.state].setdefault("avghrwage", 0)
+		for attr in attrs:
+			d[row.state].setdefault(attr, 0)
+			d[row.state][attr] += row[attr]
 		d[row.state].setdefault("counter", 0)
 		d[row.state]["counter"] += 1
-		d[row.state]["drivetime"] += row.drivetime
-		d[row.state]["totaltime"] += row.totaltime
-		d[row.state]["hotelnights"] += row.hotelnights  
-		d[row.state]["totaldrivetime"] += row.totaldrivetime 
-		d[row.state]["avghotelcost"] += row.avghotelcost 
-		d[row.state]["minhotelcost"] += row.minhotelcost 
-		d[row.state]["gasprice"] += row.gasprice
-		d[row.state]["avghrwage"] += row.avg_wkly_wage
-
+		
 		print index
 
 	statelist = sorted(d.keys())
+
+	print d
 
 	def get_attr(attr):
 		l = []
 		for state, sd in sorted(d.iteritems()):
 			l.append(float(sd[attr])/sd["counter"])
+		print l
 		return l
 
 	stateavgs = pandas.DataFrame({
@@ -290,19 +286,69 @@ def make_statewide_avgs(cities):
 		"avghotelcost" : get_attr("avghotelcost"),
 		"minhotelcost" : get_attr("minhotelcost"),
 		"gasprice" : get_attr("gasprice"),
-		"avghrwage" : get_attr("avghrwage")
+		"avghrwage" : get_attr("avghrwage"),
+		"drivedist" : get_attr("drivedist"),
+		"drivetimehrs" : get_attr("drivetimehrs"),
+		"numtrips" : get_attr("numtrips"),
+		"gascost" : get_attr("gascost"),
+		"wageloss" : get_attr("wageloss"),
+		"minabcost" : get_attr("minabcost")
 		})
+
 	stateavgs.to_csv("stateavgs.csv")
 
-if __name__ == "__main__":
-	cities = pandas.read_csv('cities.csv')
-	data = pandas.read_csv('ablocs.csv')
-	# uncomment as needed
-	#cities = cities.dropna()
-	#print sum(cities["drivetime"].isnull())
+def convert_drivetime_data():
+	drivetimes_hours = []
+	num_trips = []
+	for index, row in cities.iterrows():
+		if row.drivetime > 0:
+			h = row.drivetime/60.0
+			drivetimes_hours.append(h)
+			num_trips.append(round(row.totaldrivetime/h))
+			print index
+		else:
+			drivetimes_hours.append(np.nan)
+			num_trips.append(np.nan)
+	cities['drivetimehrs'] = pandas.Series(drivetimes_hours, index=cities.index)	
+	cities['numtrips'] = pandas.Series(num_trips, index=cities.index)
+	cities.to_csv('cities_new.csv')
 
-	attrs = ["drivetime", "totaltime","hotelnights","totaldrivetime","avghotelcost","minhotelcost","gasprice", "avg_wkly_wage"]
+def write_gas_data():
+	# gas source
+	#http://fuelgaugereport.aaa.com/todays-gas-prices/
+	gas = pandas.read_csv('gas.csv')
+	gas_price_list = []
+	gas_total_cost_list = []
+	avg_mpg = 23.4 
+	# source http://www.rita.dot.gov/bts/sites/rita.dot.gov.bts/files/publications/national_transportation_statistics/html/table_04_23.html
+	
+	for index, row in cities.iterrows():
+		avgprice = gas.Regular[gas.State == abbrevs[row.state]].iloc[0]
+		avgprice = float(avgprice[1:])
+		gas_price_list.append(avgprice)
+		gas_total_cost_list.append(row.drivedist/avg_mpg*avgprice*row.numtrips)
+		print index
+	cities['gasprice'] = pandas.Series(gas_price_list, index=cities.index)	
+	cities['gascost'] = pandas.Series(gas_total_cost_list, index=cities.index)	
+	cities.to_csv('cities_new.csv')
 
+def write_abcost_data():
+	abcost_list = []
+	for index, row in cities.iterrows():
+		abcost_list.append(minabcost[abbrevs[row.state]])
+		print index
+	cities['minabcost'] = pandas.Series(abcost_list, index=cities.index)	
+	cities.to_csv('cities_new.csv')
+
+def write_wageloss_data():
+	wageloss_list = []
+	for index, row in cities.iterrows():
+		wageloss_list.append(row.avghrwage*row.totaltime)
+		print index
+	cities['wageloss'] = pandas.Series(wageloss_list, index=cities.index)	
+	cities.to_csv('cities_new.csv')
+
+def clean_data():
 	grouplist = []
 
 	for name, group in cities.groupby("state"):
@@ -311,15 +357,41 @@ if __name__ == "__main__":
 		grouplist.append(group)
 
 	frames = pandas.concat(grouplist)
-	print frames.head()
+	#print frames.head()
 
-	print sum(frames["drivetime"].isnull())
-	make_statewide_avgs(frames)
+	#print sum(frames["drivetime"].isnull())
+	frames.to_csv('cities_clean.csv')
 
+if __name__ == "__main__":
+	cities = pandas.read_csv('cities_clean.csv')
+	data = pandas.read_csv('ablocs.csv')
+	# uncomment as needed
+	#cities = cities.dropna()
+	#print sum(cities["drivetime"].isnull())
+	#write_gas_data()
+	#write_wageloss_data()
+	#write_abcost_data()
+	#convert_drivetime_data()
+	attrs = ["drivetime","totaltime","hotelnights","totaldrivetime","avghotelcost","minhotelcost","gasprice","avghrwage","drivedist","drivetimehrs","numtrips","gascost","wageloss","minabcost"]
+	#clean_data()
+	# grouplist = []
+
+	# for name, group in cities.groupby("state"):
+	# 	for attr in attrs:
+	# 		group[attr] = group[attr].fillna(group[attr].median())
+	# 	grouplist.append(group)
+
+	# frames = pandas.concat(grouplist)
+	# print frames.head()
+
+	#print sum(cities["totaltime"][cities.state == "WA"])
+
+	#print len(cities[cities.state == "WA"])
+	make_statewide_avgs()
 
 	#write_hotel_cost()
 	#write_totaltime_data()
 	#write_closest_clinic()
 	# get_clinic_location_data()
 	# get_traplaw_numbers_data()
-	# get_drivetime_data()
+	#get_drivetime_data()

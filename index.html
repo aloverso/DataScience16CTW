@@ -5,14 +5,84 @@
         <title>D3 Test</title>
         <script type="text/javascript" src="d3/d3.v3.js"></script>
         <script src="http://benschmidt.org/colorbar/colorbar.js"></script>
+        <script src="http://fgnass.github.io/spin.js/spin.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
+        <style>
+            ul li {
+                list-style: none;
+                display: inline;
+                text-align: center;
+            }
+
+            button {
+              background-color: transparent;
+              position: relative;
+              border: none;
+              font-size: 16px;
+              transition: color 0.5s, transform 0.2s, background-color 0.2s;
+              border-radius: 3px;
+              margin: 0 10px;
+              padding: 10px 20px;
+              border: 2px solid #d4d4d4;
+            }
+
+            button.active {
+              background-color: #e8e8e8;
+              position: relative;
+              border: none;
+              font-size: 16px;
+              border-radius: 3px;
+              margin: 0 10px;
+              padding: 10px 20px;
+              border: 2px solid #d4d4d4;
+            }
+
+            button:hover {
+                border: 2px solid #1b1b20;
+            }
+
+            #tooltip {
+                position: absolute;
+                padding: 10px;
+                /*background-color: white;
+                -webkit-border-radius: 10px;
+                -moz-border-radius: 10px;
+                border-radius: 10px;
+                -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+                -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+                box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+                pointer-events: none;*/
+                top: 25%;
+                right: 25%;
+            }
+
+            #tooltip.hidden {
+                display: none;
+            }
+
+            #tooltip p {
+                margin: 0;
+                font-family: sans-serif;
+                font-size: 16px;
+                line-height: 20px;
+            }
+        </style>
     </head>
     <body>
-
-        <button id="update" onclick="draw('gasprice')">Gas Price</button>
-        <button id="update" onclick="draw('drivetime')">Drive Time</button>
-        <button id="update" onclick="draw('totaldrivetime')">Roundtrip Drive Time</button>
-        <button id="update" onclick="draw('totaltime')">Total Time Spent</button>
-        <button id="update" onclick="draw('drivetime')">Drive Time</button>
+        <div id="foo"></div>
+        <div id="tooltip" class="hidden">
+            <p><span id="header"><strong>City Name</strong></span></p>
+            <p><span id="totaltime">100</span></p>
+            <p><span id="gascost">100</span></p>
+        </div>
+        <ul>
+        <li><button id="totaltime" onclick="draw('totaltime')">Total Time Spent</button></li>
+        <li><button class="active" id="gasprice" onclick="draw('gasprice')">Gas Price</button></li>
+        <li><button id="drivetime" onclick="draw('drivetime')">Drive Time</button></li>
+        <li><button id="totaldrivetime" onclick="draw('totaldrivetime')">Roundtrip Drive Time</button></li>
+        <li><button id="hotelnights" onclick="draw('hotelnights')">Drive Time</button></li>
+        </ul>
        <!--  <svg width="500" height="50">
             <rect x="0" y="0" width="30" height="30" fill="purple"/>
             <rect x="20" y="5" width="30" height="30" fill="blue"/>
@@ -28,6 +98,32 @@
         </svg> -->
         
         <script type="text/javascript">
+
+            var opts = {
+              lines: 11 // The number of lines to draw
+            , length: 28 // The length of each line
+            , width: 14 // The line thickness
+            , radius: 42 // The radius of the inner circle
+            , scale: 1 // Scales overall size of the spinner
+            , corners: 1 // Corner roundness (0..1)
+            , color: '#000' // #rgb or #rrggbb or array of colors
+            , opacity: 0.25 // Opacity of the lines
+            , rotate: 0 // The rotation offset
+            , direction: 1 // 1: clockwise, -1: counterclockwise
+            , speed: 1 // Rounds per second
+            , trail: 60 // Afterglow percentage
+            , fps: 20 // Frames per second when using setTimeout() as a fallback for CSS
+            , zIndex: 2e9 // The z-index (defaults to 2000000000)
+            , className: 'spinner' // The CSS class to assign to the spinner
+            , top: '50%' // Top position relative to parent
+            , left: '50%' // Left position relative to parent
+            , shadow: false // Whether to render a shadow
+            , hwaccel: false // Whether to use hardware acceleration
+            , position: 'absolute' // Element positioning
+            }
+            var target = document.getElementById('foo');
+            var spinner = new Spinner(opts);
+           // target.appendChild(spinner.el)
 
             draw("totaltime");
 
@@ -55,6 +151,13 @@
             //Width and height
 
             function draw(column) {
+
+                $('.active').removeClass('active');
+
+                //add the active class to the link we clicked
+                $("button#"+column).addClass('active');
+
+                spinner.spin(target);
 
                 console.log("starting drawing");
             var w = 1200;
@@ -127,7 +230,14 @@
                         .attr("width", w)
                         .attr("height", h);
 
-            d3.csv("https://raw.githubusercontent.com/aloverso/DataScience16CTW/master/cities.csv", function(data) {
+            wt = 200
+            ht = 400
+            var tooltipsvg = d3.select("#tooltip")
+                    .append("svg")
+                    .attr("width", wt)
+                    .attr("height", ht);
+
+            d3.csv("https://raw.githubusercontent.com/aloverso/DataScience16CTW/master/cities_clean.csv", function(data) {
                 //console.log(data);
                 var color = d3.scale.quantile()
                     .range(["#ffffd9","#edf8b1","#c7e9b4","#7fcdbb","#41b6c4","#1d91c0","#225ea8","#253494","#081d58"])
@@ -139,7 +249,7 @@
 
                 color.domain(vals);
 
-                //console.log(color.quantiles());
+                console.log(color.quantiles());
 
                 // for (i=0; i<30; i++) {
                 //     console.log(color(i));
@@ -189,6 +299,8 @@
                     //     }
                     // }
 
+                    spinner.stop();
+
                     svg.selectAll("path")
                        .data(json.features)
                        .enter()
@@ -214,7 +326,7 @@
 
                     // MAKES COLOR HEATMAP
 
-                    svg.selectAll("circle")
+                        svg.selectAll("circle")
                            .data(data)
                            .enter()
                            .append("circle")
@@ -229,11 +341,39 @@
                                 return color(d[column]);
                            })
                            .style("opacity", 0.75)
-                           .append("svg:title")
-                           .text(function(d) { 
-                                var s = "If you lived in "+d.city+", "+d.state+", your abortion process would take "+formatHours(d.totaltime)+" total"
-                                return s; 
+                           .on("mouseover", function(d) {
+                                console.log("mouse on");
+                                //Get this bar's x/y values, then augment for the tooltip
+                                // var xPosition = parseFloat(d3.select(this).attr("x"));
+                                // var yPosition = parseFloat(d3.select(this).attr("y")) / 2 + h / 2;
+                                
+                                //Update the tooltip position and value
+                                d3.select("#tooltip")
+                                  // .style("left", xPosition + "px")
+                                  // .style("top", yPosition + "px")
+                                  .select("#header")
+                                  .text(d.city);
+
+                                d3.select("#tooltip")
+                                  .select("#totaltime")
+                                  .text(d.totaltime);
+
+                                d3.select("#tooltip")
+                                  .select("#gascost")
+                                  .text(d.gascost);
+
+                                //Show the tooltip
+                                d3.select("#tooltip").classed("hidden", false);
+                            })
+                           .on("mouseout", function() {
+                                //Hide the tooltip
+                                d3.select("#tooltip").classed("hidden", true);
                             });
+                           // .append("svg:title")
+                           // .text(function(d) { 
+                           //      var s = "If you lived in "+d.city+", "+d.state+", your abortion process would take "+formatHours(d.totaltime)+" total"
+                           //      return s; 
+                           //  });
 
                     // MAKES BUBBLE MAP
 
@@ -266,46 +406,66 @@
                     //             return s; 
                     //         });
 
-                    d3.csv("https://raw.githubusercontent.com/aloverso/DataScience16CTW/master/stateavgs.csv", function(stateavgs) {
-                            svg.selectAll("rect")
-                                .data(stateavgs.sort(function(a, b){return b[column]-a[column]}))
-                                .enter()
-                                .append("rect")
-                                .attr("x", w-w/8)
-                                .attr("y", function(d,i) {
-                                    return h/12 + i*18;
-                                })
-                                .attr("height", 15)
-                                .attr("width", function(d) {
-                                    return d[column]*10;
-                                })
-                                .attr("fill", function(d) {
-                                    return color(d[column]);
-                                });
+                    // STATE AVERAGES BAR CHART
+                    // d3.csv("https://raw.githubusercontent.com/aloverso/DataScience16CTW/master/stateavgs.csv", function(stateavgs) {
+
+                    //         svg.selectAll("rect")
+                    //             .data(stateavgs.sort(function(a, b){return b[column]-a[column]}))
+                    //             .enter()
+                    //             .append("rect")
+                    //             .attr("x", w-w/6)
+                    //             .attr("y", function(d,i) {
+                    //                 return h/12 + i*18;
+                    //             })
+                    //             .attr("height", 15)
+                    //             .attr("width", function(d) {
+                    //                 return d[column]*8;
+                    //             })
+                    //             .attr("fill", function(d) {
+                    //                 return color(d[column]);
+                    //             });
                                 
-                            svg.selectAll("text")
-                                .data(stateavgs.sort(function(a, b){return b[column]-a[column]}))
-                                .enter()
-                                .append("text")
-                                .text(function(d) {
-                                    return abbrevs[d.state];
-                                })
-                                .attr("x", w-w/8-5)
-                                .attr("y", function(d,i) {
-                                    return h/12 + 11 + i*18;
-                                })
-                                .attr("font-family", "sans-serif")
-                                .attr("font-size", "11px")
-                                .attr("text-anchor", "end");
-                            svg.append("text")
-                                .text("Average Total Time by State")
-                                .attr("x",(w-w/8)+30)
-                                .attr("y",h/12-20)
-                                .attr("font-family", "sans-serif")
-                                .attr("font-size", "14px")
-                                .attr("text-anchor", "middle");
+                    //         svg.selectAll("text")
+                    //             .data(stateavgs.sort(function(a, b){return b[column]-a[column]}))
+                    //             .enter()
+                    //             .append("text")
+                    //             .text(function(d) {
+                    //                 return abbrevs[d.state];
+                    //             })
+                    //             .attr("x", w-w/6-5)
+                    //             .attr("y", function(d,i) {
+                    //                 return h/12 + 11 + i*18;
+                    //             })
+                    //             .attr("font-family", "sans-serif")
+                    //             .attr("font-size", "11px")
+                    //             .attr("text-anchor", "end");
+                    //         svg.selectAll("labels")
+                    //             .data(stateavgs.sort(function(a, b){return b[column]-a[column]}))
+                    //             .enter()
+                    //             .append("text")
+                    //             .text(function(d) {
+                    //                 return Math.round(d[column]*10)/10;
+                    //             })
+                    //             .attr("x", function(d) {
+                    //                 return w-w/6+5+ d[column]*8;
+                    //             })
+                    //             .attr("y", function(d,i) {
+                    //                 return h/12 + 11 + i*18;
+                    //             })
+                    //             .attr("font-family", "sans-serif")
+                    //             .attr("font-size", "11px");
+                    //         svg.append("text")
+                    //             .text("Average Total Time by State (hrs)")
+                    //             .attr("x",(w-w/6)+30)
+                    //             .attr("y",h/12-20)
+                    //             .attr("font-family", "sans-serif")
+                    //             .attr("font-size", "14px")
+                    //             .attr("text-anchor", "middle");
                             
-                    });
+                    // });
+
+                    
+                    // PLOT CLINIC LOCATIONS
 
                     // d3.csv("https://raw.githubusercontent.com/aloverso/DataScience16CTW/master/ablocs.csv", function(ablocs) {
                     //     svg.selectAll("circle")
@@ -323,6 +483,10 @@
                     //        .style("opacity", 0.75);
                     // });
 
+                    // HOVER DATA
+
+
+
                 });
             });
 
@@ -339,6 +503,7 @@
         
             // });
             console.log("ending drawing");
+
         }
 
 
