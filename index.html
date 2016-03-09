@@ -7,8 +7,15 @@
         <script src="http://benschmidt.org/colorbar/colorbar.js"></script>
         <script src="http://fgnass.github.io/spin.js/spin.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
         <style>
+            body {
+                margin: 50px;
+                font-family: Arial;
+            }
+
             ul li {
                 list-style: none;
                 display: inline;
@@ -45,6 +52,8 @@
             #tooltip {
                 position: absolute;
                 padding: 10px;
+                width: 250px;
+                height: 400px;
                 /*background-color: white;
                 -webkit-border-radius: 10px;
                 -moz-border-radius: 10px;
@@ -54,7 +63,8 @@
                 box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
                 pointer-events: none;*/
                 top: 25%;
-                right: 25%;
+                right: 20%;
+                word-wrap: break-word;
             }
 
             #tooltip.hidden {
@@ -70,11 +80,19 @@
         </style>
     </head>
     <body>
+        <h1>How Hard is it for a Woman to Get an Abortion?</h1>
         <div id="foo"></div>
         <div id="tooltip" class="hidden">
-            <p><span id="header"><strong>City Name</strong></span></p>
-            <p><span id="totaltime">100</span></p>
-            <p><span id="gascost">100</span></p>
+            <p><span id="header"><strong>City Name></strong></span></p>
+            <p><span id="drivetime"></span></p>
+            <p><span id="hoteltime"></span></p>
+            </br>
+            <p><span id="gascost"></span></p>
+            <p><span id="hotelcost"></span></p>
+            <p><span id="abcost"></span></p>
+            <p><span id="wageloss"></span></p>
+            <hr>
+            <p><span id="totalcost"></span></p>
         </div>
         <ul>
         <li><button id="totaltime" onclick="draw('totaltime')">Total Time Spent</button></li>
@@ -163,57 +181,57 @@
             var w = 1200;
             var h = 1000;
 
-            abbrevs = {"AL":"Alabama",
-"AK":"Alaska",
-"AZ":"Arizona",
-"AR":"Arkansas",
-"CA":"California",
-"CO":"Colorado",
-"CT":"Connecticut",
-"DE":"Delaware",
-"DC":"District of Columbia",
-"FL":"Florida",
-"GA":"Georgia",
-"HI":"Hawaii",
-"ID":"Idaho",
-"IL":"Illinois",
-"IN":"Indiana",
-"IA":"Iowa",
-"KS":"Kansas",
-"KY":"Kentucky",
-"LA":"Louisiana",
-"ME":"Maine",
-"MD":"Maryland",
-"MA":"Massachusetts",
-"MI":"Michigan",
-"MN":"Minnesota",
-"MS":"Mississippi",
-"MO":"Missouri",
-"MT":"Montana",
-"NE":"Nebraska",
-"NV":"Nevada",
-"NH":"New Hampshire",
-"NJ":"New Jersey",
-"NM":"New Mexico",
-"NY":"New York",
-"NC":"North Carolina",
-"ND":"North Dakota",
-"OH":"Ohio",
-"OK":"Oklahoma",
-"OR":"Oregon",
-"PA":"Pennsylvania",
-"RI":"Rhode Island",
-"SC":"South Carolina",
-"SD":"South Dakota",
-"TN":"Tennessee",
-"TX":"Texas",
-"UT":"Utah",
-"VT":"Vermont",
-"VA":"Virginia",
-"WA":"Washington",
-"WV":"West Virginia",
-"WI":"Wisconsin",
-"WY":"Wyoming" }
+            abbrevs = { "AL":"Alabama",
+                        "AK":"Alaska",
+                        "AZ":"Arizona",
+                        "AR":"Arkansas",
+                        "CA":"California",
+                        "CO":"Colorado",
+                        "CT":"Connecticut",
+                        "DE":"Delaware",
+                        "DC":"District of Columbia",
+                        "FL":"Florida",
+                        "GA":"Georgia",
+                        "HI":"Hawaii",
+                        "ID":"Idaho",
+                        "IL":"Illinois",
+                        "IN":"Indiana",
+                        "IA":"Iowa",
+                        "KS":"Kansas",
+                        "KY":"Kentucky",
+                        "LA":"Louisiana",
+                        "ME":"Maine",
+                        "MD":"Maryland",
+                        "MA":"Massachusetts",
+                        "MI":"Michigan",
+                        "MN":"Minnesota",
+                        "MS":"Mississippi",
+                        "MO":"Missouri",
+                        "MT":"Montana",
+                        "NE":"Nebraska",
+                        "NV":"Nevada",
+                        "NH":"New Hampshire",
+                        "NJ":"New Jersey",
+                        "NM":"New Mexico",
+                        "NY":"New York",
+                        "NC":"North Carolina",
+                        "ND":"North Dakota",
+                        "OH":"Ohio",
+                        "OK":"Oklahoma",
+                        "OR":"Oregon",
+                        "PA":"Pennsylvania",
+                        "RI":"Rhode Island",
+                        "SC":"South Carolina",
+                        "SD":"South Dakota",
+                        "TN":"Tennessee",
+                        "TX":"Texas",
+                        "UT":"Utah",
+                        "VT":"Vermont",
+                        "VA":"Virginia",
+                        "WA":"Washington",
+                        "WV":"West Virginia",
+                        "WI":"Wisconsin",
+                        "WY":"Wyoming" }
             //Define default path generator
 
             var projection = d3.geo.albersUsa()
@@ -232,10 +250,10 @@
 
             wt = 200
             ht = 400
-            var tooltipsvg = d3.select("#tooltip")
-                    .append("svg")
-                    .attr("width", wt)
-                    .attr("height", ht);
+            // var svgtt = d3.select("#tooltip")
+            //         .append("svg")
+            //         .attr("width", wt)
+            //         .attr("height", ht);
 
             d3.csv("https://raw.githubusercontent.com/aloverso/DataScience16CTW/master/cities_clean.csv", function(data) {
                 //console.log(data);
@@ -352,15 +370,71 @@
                                   // .style("left", xPosition + "px")
                                   // .style("top", yPosition + "px")
                                   .select("#header")
-                                  .text(d.city);
+                                  .text(d.city + ", " +d.state);
+
+                                var getHtml = function(amt, icon, label, units) {
+                                    res = "";
+                                    if (units === "hours") {
+                                        amt = Math.round(amt*10)/10;
+                                        res = label+amt+" hrs"+"</br>";
+                                        for (i=0; i<amt; i++) {
+                                            res+=icon;                                      
+                                        }
+                                    }
+                                    else if (units === "dollars") {
+                                        amt = Math.round(amt*100)/100;
+                                        res = label+"$"+amt+"</br>";
+                                        for (i=0; i<amt/10; i++) {
+                                            res+=icon;                           
+                                        }
+                                    }
+                                    
+                                    return res;
+                                };
 
                                 d3.select("#tooltip")
-                                  .select("#totaltime")
-                                  .text(d.totaltime);
+                                  .select("#drivetime")
+                                  .html(getHtml(d.totaldrivetime, "<i class='fa fa-car fa-fw'></i> ", "Driving Time: ","hours"));
+
+                                d3.select("#tooltip")
+                                  .select("#hoteltime")
+                                  .html(getHtml(d.totaltime - d.totaldrivetime, "<i class='fa fa-hotel fa-fw'></i> ", "Time in Hotel: ","hours"));
 
                                 d3.select("#tooltip")
                                   .select("#gascost")
-                                  .text(d.gascost);
+                                  .html(getHtml(d.gascost, "<i class='material-icons'>local_gas_station</i> ", "Gas Cost: ","dollars"));
+
+                                d3.select("#tooltip")
+                                  .select("#gascost")
+                                  .html(getHtml(d.gascost, "<i class='material-icons'>local_gas_station</i> ", "Gas Cost: ","dollars"));
+
+                                d3.select("#tooltip")
+                                  .select("#hotelcost")
+                                  .html(getHtml(d.avghotelcost, "<i class='fa fa-hotel fa-fw'></i> ", "Hotel Cost: ","dollars"));
+
+                                d3.select("#tooltip")
+                                  .select("#abcost")
+                                  .html(getHtml(d.minabcost, "<i class='fa fa-medkit fa-fw'></i> ", "Abortion Cost: ","dollars"));
+
+                                d3.select("#tooltip")
+                                  .select("#wageloss")
+                                  .html(getHtml(d.wageloss, "<i class='fa fa-money fa-fw'></i> ", "Wages Lost During Process Time: ","dollars"));
+
+                                var tcost = parseInt(d.gascost) + parseInt(d.avghotelcost)+parseInt(d.minabcost)+parseInt(d.wageloss);
+                                d3.select("#tooltip")
+                                  .select("#totalcost")
+                                  .html("<b>Total Cost: </b>$"+tcost);
+
+                                // d3.select("#tooltip")
+                                //   .select("#totaltime")
+                                //   .text(d.totaltime);
+
+                                // d3.select("#tooltip")
+                                //   .select("#gascost")
+                                //   .text(d.totaltime);
+                                // svgtt.append("rect")
+                                //      .attr("width", 60)
+                                //      .attr("height",d.totaltime*8);
 
                                 //Show the tooltip
                                 d3.select("#tooltip").classed("hidden", false);
@@ -368,6 +442,7 @@
                            .on("mouseout", function() {
                                 //Hide the tooltip
                                 d3.select("#tooltip").classed("hidden", true);
+                                svgtt.selectAll("*").remove();
                             });
                            // .append("svg:title")
                            // .text(function(d) { 
@@ -482,8 +557,6 @@
                     //        .style("fill", "yellow")
                     //        .style("opacity", 0.75);
                     // });
-
-                    // HOVER DATA
 
 
 
