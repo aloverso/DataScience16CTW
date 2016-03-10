@@ -12,7 +12,7 @@
 
         <style>
             body {
-                margin: 50px;
+                margin: 25px;
                 font-family: Arial;
             }
 
@@ -62,7 +62,7 @@
                 -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
                 box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
                 pointer-events: none;*/
-                top: 25%;
+                top: 20%;
                 right: 20%;
                 word-wrap: break-word;
             }
@@ -80,7 +80,7 @@
         </style>
     </head>
     <body>
-        <h1>How Hard is it for a Woman to Get an Abortion?</h1>
+        <h2>How Hard is it for a Woman to get an Abortion?</h2>
         <div id="foo"></div>
         <div id="tooltip" class="hidden">
             <p><span id="header"><strong>City Name></strong></span></p>
@@ -179,7 +179,7 @@
 
                 console.log("starting drawing");
             var w = 1200;
-            var h = 1000;
+            var h = 625;
 
             abbrevs = { "AL":"Alabama",
                         "AK":"Alaska",
@@ -235,8 +235,8 @@
             //Define default path generator
 
             var projection = d3.geo.albersUsa()
-                       .translate([w/2.5, h/3.5]);
-                       //.scale([500]);
+                       .translate([w/2.5, h/2.75])
+                       .scale([950]);
 
             var path = d3.geo.path()
                  .projection(projection);
@@ -370,7 +370,7 @@
                                   // .style("left", xPosition + "px")
                                   // .style("top", yPosition + "px")
                                   .select("#header")
-                                  .text(d.city + ", " +d.state);
+                                  .html("<h3>"+d.city + ", " +d.state+"</h3>");
 
                                 var getHtml = function(amt, icon, label, units) {
                                     res = "";
@@ -402,11 +402,7 @@
 
                                 d3.select("#tooltip")
                                   .select("#gascost")
-                                  .html(getHtml(d.gascost, "<i class='material-icons'>local_gas_station</i> ", "Gas Cost: ","dollars"));
-
-                                d3.select("#tooltip")
-                                  .select("#gascost")
-                                  .html(getHtml(d.gascost, "<i class='material-icons'>local_gas_station</i> ", "Gas Cost: ","dollars"));
+                                  .html(getHtml(d.gascost, "<i class='material-icons'>local_gas_station</i>", "Gas Cost: ","dollars"));
 
                                 d3.select("#tooltip")
                                   .select("#hotelcost")
@@ -442,7 +438,6 @@
                            .on("mouseout", function() {
                                 //Hide the tooltip
                                 d3.select("#tooltip").classed("hidden", true);
-                                svgtt.selectAll("*").remove();
                             });
                            // .append("svg:title")
                            // .text(function(d) { 
@@ -482,62 +477,90 @@
                     //         });
 
                     // STATE AVERAGES BAR CHART
-                    // d3.csv("https://raw.githubusercontent.com/aloverso/DataScience16CTW/master/stateavgs.csv", function(stateavgs) {
+                    d3.csv("https://raw.githubusercontent.com/aloverso/DataScience16CTW/master/stateavgs.csv", function(stateavgs) {
+                            var wb = 900;
+                            var hb = 100;
+                            var barPadding = 1;
+                            var svgb = d3.select("svg")
+                                .append("svg")
+                                .attr("width", wb)
+                                .attr("height", hb)
+                                .attr("x", w/50)
+                                .attr("y", h-h/4);
 
-                    //         svg.selectAll("rect")
-                    //             .data(stateavgs.sort(function(a, b){return b[column]-a[column]}))
-                    //             .enter()
-                    //             .append("rect")
-                    //             .attr("x", w-w/6)
-                    //             .attr("y", function(d,i) {
-                    //                 return h/12 + i*18;
-                    //             })
-                    //             .attr("height", 15)
-                    //             .attr("width", function(d) {
-                    //                 return d[column]*8;
-                    //             })
-                    //             .attr("fill", function(d) {
-                    //                 return color(d[column]);
-                    //             });
+                            svgb.selectAll("rect")
+                                .data(stateavgs.sort(function(a, b){return b[column]-a[column]}))
+                                .enter()
+                                .append("rect")
+                                .attr("x", function(d, i) {
+                                    return i * (wb / stateavgs.length);
+                                })
+                                .attr("y", function(d) {
+                                    return hb-10-d[column]*8;
+                                })
+                                .attr("width", wb / stateavgs.length - barPadding)
+                                .attr("height", function(d) {
+                                    return d[column]*8;
+                                })
+                                .attr("fill", function(d) {
+                                    return color(d[column]);
+                                });
+                                // .attr("x", function(d,i) {
+                                //     return w/8 + i*10;
+                                // })
+                                // .attr("y", h-h/10)
+                                // .attr("height", function(d) {
+                                //     return d[column]*8;
+                                // })
+                                // .attr("width", 8)
                                 
-                    //         svg.selectAll("text")
-                    //             .data(stateavgs.sort(function(a, b){return b[column]-a[column]}))
-                    //             .enter()
-                    //             .append("text")
-                    //             .text(function(d) {
-                    //                 return abbrevs[d.state];
-                    //             })
-                    //             .attr("x", w-w/6-5)
-                    //             .attr("y", function(d,i) {
-                    //                 return h/12 + 11 + i*18;
-                    //             })
-                    //             .attr("font-family", "sans-serif")
-                    //             .attr("font-size", "11px")
-                    //             .attr("text-anchor", "end");
-                    //         svg.selectAll("labels")
-                    //             .data(stateavgs.sort(function(a, b){return b[column]-a[column]}))
-                    //             .enter()
-                    //             .append("text")
-                    //             .text(function(d) {
-                    //                 return Math.round(d[column]*10)/10;
-                    //             })
-                    //             .attr("x", function(d) {
-                    //                 return w-w/6+5+ d[column]*8;
-                    //             })
-                    //             .attr("y", function(d,i) {
-                    //                 return h/12 + 11 + i*18;
-                    //             })
-                    //             .attr("font-family", "sans-serif")
-                    //             .attr("font-size", "11px");
-                    //         svg.append("text")
-                    //             .text("Average Total Time by State (hrs)")
-                    //             .attr("x",(w-w/6)+30)
-                    //             .attr("y",h/12-20)
-                    //             .attr("font-family", "sans-serif")
-                    //             .attr("font-size", "14px")
-                    //             .attr("text-anchor", "middle");
+                                
+                            svgb.selectAll("text")
+                                .data(stateavgs.sort(function(a, b){return b[column]-a[column]}))
+                                .enter()
+                                .append("text")
+                                .text(function(d) {
+                                    return d.state;
+                                })
+                                .attr("x", function(d, i) {
+                                    return i * (wb / stateavgs.length) + (wb / stateavgs.length - barPadding) / 2;
+                                })
+                                .attr("y", function(d) {
+                                    return hb;
+                                })
+                                .attr("font-family", "sans-serif")
+                                .attr("font-size", "10px")
+                                .attr("text-anchor", "middle");
+                                //.attr("transform", "rotate(90)");
+
+                            svgb.selectAll("labels")
+                                .data(stateavgs.sort(function(a, b){return b[column]-a[column]}))
+                                .enter()
+                                .append("text")
+                                .text(function(d) {
+                                    return Math.round(d[column]*10)/10;
+                                })
+                                // .attr("x", function(d, i) {
+                                //     return i * (wb / stateavgs.length) + 5;
+                                // })
+                                .attr("x", function(d, i) {
+                                    return i * (wb / stateavgs.length) + (wb / stateavgs.length - barPadding) / 2;
+                                })
+                                .attr("y", function(d) {
+                                    return hb-10-(d[column]*8)-3;
+                                })
+                                .attr("text-anchor", "middle")
+                                .attr("font-family", "sans-serif")
+                                .attr("font-size", "10px");
+                            svg.append("text")
+                                .text("Average Total Time by State (hrs)")
+                                .attr("x",(w/50+wb)/2)
+                                .attr("y",h-h/30)
+                                .attr("font-family", "sans-serif")
+                                .attr("font-size", "16px")
+                                .attr("text-anchor", "middle");
                             
-                    // });
+                    });
 
                     
                     // PLOT CLINIC LOCATIONS
