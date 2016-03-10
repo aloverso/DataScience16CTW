@@ -253,6 +253,8 @@ def write_hotel_cost():
 	cities.to_csv('cities_new.csv')
 
 def make_statewide_avgs():
+
+	cities = pandas.read_csv("cities_clean.csv")
 	d = {}
 
 	for index,row in cities.iterrows():
@@ -263,6 +265,13 @@ def make_statewide_avgs():
 			d[row.state][attr] += row[attr]
 		d[row.state].setdefault("counter", 0)
 		d[row.state]["counter"] += 1
+
+		d[row.state].setdefault("avghoteltime", 0)
+		d[row.state]["avghoteltime"] += row.totaltime - row.totaldrivetime
+
+		d[row.state].setdefault("counthotelcities", 0)
+		if row.hotelnights > 0:
+			d[row.state]["counthotelcities"] += 1
 		
 		print index
 
@@ -273,7 +282,10 @@ def make_statewide_avgs():
 	def get_attr(attr):
 		l = []
 		for state, sd in sorted(d.iteritems()):
-			l.append(float(sd[attr])/sd["counter"])
+			if attr == "counthotelcities":
+				l.append(float(sd[attr]))
+			else:
+				l.append(float(sd[attr])/sd["counter"])
 		print l
 		return l
 
@@ -292,7 +304,10 @@ def make_statewide_avgs():
 		"numtrips" : get_attr("numtrips"),
 		"gascost" : get_attr("gascost"),
 		"wageloss" : get_attr("wageloss"),
-		"minabcost" : get_attr("minabcost")
+		"minabcost" : get_attr("minabcost"),
+		"avghoteltime" : get_attr("avghoteltime"),
+		"counthotelcities" : get_attr("counthotelcities"),
+		"clinicscount" : get_attr("clinicscount")
 		})
 
 	stateavgs.to_csv("stateavgs.csv")
@@ -362,9 +377,24 @@ def clean_data():
 	#print sum(frames["drivetime"].isnull())
 	frames.to_csv('cities_clean.csv')
 
+def get_ablocs_count():
+	
+	d = {}
+	countlist = []
+
+	for abindex,abrow in ablocs.iterrows():
+		d.setdefault(abrow.state, 0)
+		d[abrow.state] +=1
+
+	for index,row in cities.iterrows():
+		countlist.append(d[row.state])
+
+	cities['clinicscount'] = pandas.Series(countlist, index=cities.index)	
+	cities.to_csv('cities_new.csv')
+
 if __name__ == "__main__":
 	cities = pandas.read_csv('cities_new.csv')
-	data = pandas.read_csv('ablocs.csv')
+	ablocs = pandas.read_csv('ablocs.csv')
 	# uncomment as needed
 	#cities = cities.dropna()
 	#print sum(cities["drivetime"].isnull())
@@ -372,7 +402,7 @@ if __name__ == "__main__":
 	#write_wageloss_data()
 	#write_abcost_data()
 	#convert_drivetime_data()
-	attrs = ["drivetime","totaltime","hotelnights","totaldrivetime","avghotelcost","minhotelcost","gasprice","avghrwage","drivedist","drivetimehrs","numtrips","gascost","wageloss","minabcost"]
+	attrs = ["drivetime","totaltime","hotelnights","totaldrivetime","avghotelcost","minhotelcost","gasprice","avghrwage","drivedist","drivetimehrs","numtrips","gascost","wageloss","minabcost","clinicscount"]
 	#clean_data()
 	# grouplist = []
 
@@ -388,7 +418,7 @@ if __name__ == "__main__":
 
 	#print len(cities[cities.state == "WA"])
 	make_statewide_avgs()
-
+	#get_ablocs_count()
 	#write_hotel_cost()
 	#write_totaltime_data()
 	#write_closest_clinic()
