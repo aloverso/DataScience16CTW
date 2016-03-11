@@ -102,7 +102,7 @@
                 position: absolute;
                 padding: 10px;
                 width: 500px;
-                left: 650px;
+                left: 750px;
                 font-size: 14px;
                 word-wrap: break-word;
             }
@@ -588,7 +588,7 @@
                                 .attr("width", wb)
                                 .attr("height", hb)
                                 .attr("x", w/50)
-                                .attr("y", h-h/3.5);
+                                .attr("y", h-h/3.8);
 
                             svgb.selectAll("rect")
                                 .data(stateavgs.sort(function(a, b){return b[barcolumn]-a[barcolumn]}))
@@ -644,7 +644,7 @@
                             svg.append("text")
                                 .text(titles[column])
                                 .attr("x",(w/50+wb)/2)
-                                .attr("y",h-h/12)
+                                .attr("y",h-h/15)
                                 .attr("font-family", "sans-serif")
                                 .attr("font-size", "16px")
                                 .attr("text-anchor", "middle");
@@ -681,7 +681,7 @@
 
         <div id="about">
             <h2>About this Project</h2>
-            <p>This was created as a 2-week project for the <a href="https://sites.google.com/site/datascience16/">Data Science</a> class at <a href="http://www.olin.edu/">Olin College of Engineering</a> by Anne LoVerso and James (Zhecan) Wang.</p>
+            <p>This was created as a two-week project for the <a href="https://sites.google.com/site/datascience16/">Data Science</a> class at <a href="http://www.olin.edu/">Olin College of Engineering</a> by Anne LoVerso and James (Zhecan) Wang.</p>
 
             <p>Many people aren’t aware that even in states that have legal abortion clinics, there are a large number of laws in place that make it hard for clinics to stay open and hard for women to get abortions.  Our visualization is to raise awareness about the arbitrary restrictions lawmakers have placed on women’s rights and hopefully encourage people to take action or vote to prevent laws.  Viewing our visualization will try to convince people that women who want abortions are often unable to get them, and that we as a society should be doing something about this.</p>
 
