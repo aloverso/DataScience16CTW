@@ -51,12 +51,6 @@
 
             button.active {
               background-color: #e8e8e8;
-              position: relative;
-              font-size: 16px;
-              border-radius: 3px;
-              margin: 0 10px;
-              padding: 10px 20px;
-              border: 2px solid #d4d4d4;
             }
 
             button:hover {
@@ -68,8 +62,8 @@
                 padding: 10px;
                 width: 250px;
                 height: 400px;
-                top: 17%;
-                right: 15%;
+                top: 13%;
+                left: 950px;
                 word-wrap: break-word;
             }
 
@@ -82,6 +76,7 @@
                 font-family: sans-serif;
                 font-size: 16px;
                 line-height: 20px;
+                padding-bottom: 10px;
             }
 
             a.navb {
@@ -107,26 +102,48 @@
                 position: absolute;
                 padding: 10px;
                 width: 500px;
-                right: 5%;
+                left: 650px;
                 font-size: 14px;
                 word-wrap: break-word;
             }
+
+            #legend {
+                z-index: 2;
+                position: absolute;
+            }
+
+            li.key {
+                border-left-width: 20px;
+                border-left-style: solid;
+                font-size: .75em;
+                width: 25px;
+                padding-left: 5px;
+                padding-right: 5px;
+                padding-bottom: 10px;
+                list-style: none;
+                margin: 0 0;
+            }
+
+          /*  #main {
+                position: absolute;
+                top: 10%;
+            }*/
 
         </style>
     </head>
     <body>
         <a class="navb" href="#about">About</a><a class="navb" href="#more">More Data</a>
         <h2>How Difficult is it for a Woman to get an Abortion?</h2>
-        <div id="foo"></div>
+        <div id="spinneritem"></div>
         <div id="tooltip" class="hidden">
-            <p><span id="header"><strong>City Name></strong></span></p>
+            <span id="header"><strong>City Name></strong></span>
             <p><span id="drivetime"></span></p>
             <p><span id="hoteltime"></span></p>
             </br>
             <p><span id="gascost"></span></p>
-            <p><span id="hotelcost"></span></p>
             <p><span id="abcost"></span></p>
             <p><span id="wageloss"></span></p>
+            <p><span id="hotelcost"></span></p>
             <hr>
             <p><span id="totalcost"></span></p>
         </div>
@@ -136,6 +153,7 @@
             <li><button id="minabcost" onclick="draw('minabcost')">Cost of Abortion</button></li>
             <li><button id="clinicscount" onclick="draw('clinicscount')"># Clinics/State</button></li>
         </ul>
+        <div id="legend"></div>
 
         <div id="main"></div>
 
@@ -182,7 +200,7 @@
             , hwaccel: false // Whether to use hardware acceleration
             , position: 'absolute' // Element positioning
             }
-            var target = document.getElementById('foo');
+            var target = document.getElementById('spinneritem');
             var spinner = new Spinner(opts);
 
             draw("totaltime");
@@ -259,8 +277,19 @@
             var path = d3.geo.path()
                  .projection(projection);
 
+            var wm = 600;
+            var hm = 600;
+
+            var projection_more = d3.geo.albersUsa()
+                   .translate([wm/2, hm/2])
+                   .scale([750]);
+
+            var path_more = d3.geo.path()
+                 .projection(projection_more);
+
             d3.select("svg").remove();
             d3.select("svg").remove();
+            d3.select("#legend ul").remove();
 
             var svg = d3.select("#main")
                         .append("svg")
@@ -269,8 +298,8 @@
 
             var svgmore = d3.select("#more")
                             .append("svg")
-                            .attr("width", w)
-                            .attr("height", h);
+                            .attr("width", wm)
+                            .attr("height", hm);
 
             wt = 200
             ht = 400
@@ -299,7 +328,26 @@
                     });
 
                     color.domain(vals);
+
+                    console.log(color.quantiles());
                 }
+
+                var legend = d3.select('#legend')
+                  .append('ul')
+                    .attr('class', 'list-inline');
+
+                var keys = legend.selectAll('li.key')
+                    .data(color.range());
+
+                keys.enter().append('li')
+                    .attr('class', 'key')
+                    .style('border-left-color', String)
+                    .text(function(d) {
+                        var r = color.invertExtent(d);
+                        return Math.round(r[0]*10)/10;
+                    });
+
+
 
                 // colorbar = Colorbar()
                 //   .origin([30,80])
@@ -363,7 +411,12 @@
                                     else if (units === "dollars") {
                                         amt = Math.round(amt*100)/100;
                                         res = label+"$"+amt+"</br>";
-                                        for (i=0; i<amt/10; i++) {
+                                        var base = 10;
+                                        if (label === "Abortion Cost: "){
+                                            base = 100;
+                                        }
+                                        
+                                        for (i=0; i<amt/base; i++) {
                                             res+=icon;                           
                                         }
                                     }
@@ -381,11 +434,7 @@
 
                                 d3.select("#tooltip")
                                   .select("#gascost")
-                                  .html(getHtml(d.gascost, "<i class='material-icons'>local_gas_station</i>", "Gas Cost: ","dollars"));
-
-                                d3.select("#tooltip")
-                                  .select("#hotelcost")
-                                  .html(getHtml(d.avghotelcost, "<i class='fa fa-hotel fa-fw'></i> ", "Hotel Cost: ","dollars"));
+                                  .html(getHtml(d.gascost, "<i class='material-icons'>local_gas_station</i>", "Gas Cost: ","dollars"));                                
 
                                 d3.select("#tooltip")
                                   .select("#abcost")
@@ -393,7 +442,11 @@
 
                                 d3.select("#tooltip")
                                   .select("#wageloss")
-                                  .html(getHtml(d.wageloss, "<i class='fa fa-money fa-fw'></i> ", "Wages Lost During Process Time: ","dollars"));
+                                  .html(getHtml(d.wageloss, "<i class='fa fa-money fa-fw'></i> ", "Potential Wages Lost: ","dollars"));
+
+                                d3.select("#tooltip")
+                                  .select("#hotelcost")
+                                  .html(getHtml(d.avghotelcost, "<i class='fa fa-hotel fa-fw'></i> ", "Hotel Cost: ","dollars")); 
 
                                 var tcost = parseInt(d.gascost) + parseInt(d.avghotelcost)+parseInt(d.minabcost)+parseInt(d.wageloss);
                                 d3.select("#tooltip")
@@ -425,11 +478,11 @@
 
                     color_more.domain(vals);
 
-                    svgmore .selectAll("path")
+                    svgmore.selectAll("path")
                        .data(json.features)
                        .enter()
                        .append("path")
-                       .attr("d", path)
+                       .attr("d", path_more)
                        .style("fill", "#ccc");
 
                     svgmore.selectAll("line")
@@ -437,16 +490,16 @@
                            .enter()
                            .append("line")
                            .attr("x1", function(d) {
-                                   return projection([d.lng, d.lat])[0];
+                                   return projection_more([d.lng, d.lat])[0];
                            })
                            .attr("y1", function(d) {
-                                   return projection([d.lng, d.lat])[1];
+                                   return projection_more([d.lng, d.lat])[1];
                            })
                            .attr("x2", function(d) {
-                              return projection([d.cliniclng, d.cliniclat])[0];
+                              return projection_more([d.cliniclng, d.cliniclat])[0];
                            })
                            .attr("y2", function(d) {
-                              return projection([d.cliniclng, d.cliniclat])[1];
+                              return projection_more([d.cliniclng, d.cliniclat])[1];
                             })
                            .style("stroke", function(d) {
                                 return color_more(d.drivedist);
@@ -458,10 +511,10 @@
                            .enter()
                            .append("circle")
                            .attr("cx", function(d) {
-                                   return projection([d.longitude, d.latitude])[0];
+                                   return projection_more([d.longitude, d.latitude])[0];
                            })
                            .attr("cy", function(d) {
-                                   return projection([d.longitude, d.latitude])[1];
+                                   return projection_more([d.longitude, d.latitude])[1];
                            })
                            .attr("r", 3)
                            .style("fill", "yellow")
@@ -535,7 +588,7 @@
                                 .attr("width", wb)
                                 .attr("height", hb)
                                 .attr("x", w/50)
-                                .attr("y", h-h/4);
+                                .attr("y", h-h/3.5);
 
                             svgb.selectAll("rect")
                                 .data(stateavgs.sort(function(a, b){return b[barcolumn]-a[barcolumn]}))
@@ -591,7 +644,7 @@
                             svg.append("text")
                                 .text(titles[column])
                                 .attr("x",(w/50+wb)/2)
-                                .attr("y",h-h/30)
+                                .attr("y",h-h/12)
                                 .attr("font-family", "sans-serif")
                                 .attr("font-size", "16px")
                                 .attr("text-anchor", "middle");
@@ -647,6 +700,7 @@
                 <li><a href="http://fuelgaugereport.aaa.com/todays-gas-prices/">AAA FuelGauge</a> for average statewide gas prices</li>
                 <li><a href="http://thinkprogress.org/health/2015/02/25/3622531/cost-abortion-investigation/">ThinkProgress.org</a> for minimum cost of abortion by state</li>
                 <li><a href="http://simplemaps.com/resources/us-cities-data">Simplemaps.com</a> for data on every US city and its location</li>
+                <li><a href="http://www.bls.gov/web/cewqtr.supp.toc.htm">Bureau of Labor Statistics</a> for wage data</li>
             </ul>
             </p>
         </div>
