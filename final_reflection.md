@@ -1,0 +1,17 @@
+# Change the World Project Final Reflection
+Anne LoVerso and Zhecan Wang(James) 
+
+## Assessment evidence and interpretation
+
+Our final deliverable for this project was an interactive visualization tool that serves as a way for users to explore the facets of our data and hopefully persuade someone to vote or take action to make changes on abortion laws.  It illustrates to people how difficult it is for women to access abortion procedures in the United States.  We believe our final product is beautiful and comprehensive and shows our effort in working on this project.  [View the final page here](http://aloverso.github.io/DataScience16CTW).
+
+Since our goal was to produce unique and impactful visualizations of our data, through the process of exploration, we tried quite some different visualization methods and produced some prototyping graphs along the way. These are located in our [mid project check in file](https://github.com/aloverso/DataScience16CTW/blob/master/mid_project_checkin.md).
+
+We made a model that describes the total time required getting an abortion, for driving back in between, total money cost and so on, based on our reasonable assumptions from many different datasets.  It was very important for us to explore and gather raw data from different sources containing statistics like gas prices, abortion laws, abortion costs, clinics locations and so on. We used Python to collect and organize the data (using the pandas library), and seaborn and matplotlib to create initial visuals. The relevant code can be found in our repo: https://github.com/aloverso/DataScience16CTW
+
+##Changing the world
+
+Since our project is an interactive web visualization product and it is currently hosted online, it is very easy for people to access and interact with. We hope that the page is impactful, powerful, and compelling.  Ideally, people who view it would be moved to take action against abortion restriction laws, after seeing the large amount of time and money some women need to spare to get an abortion.   We believe, by looking though our maps and graphs, people can clearly see the need for helping more women to more conveniently and less expensively access abortion treatment in the U.S.A.
+
+##Learning goals
+We feel like we learned a lot during this project.  Our main “soft” learning goal was to create a compelling visualization, using deliberate techniques we learned, and our main technical learning goal was to use D3 to do this.  We feel that we achieved both of these.  We were able to pick up D3 fairly easily, since we both have grounding in JavaScript, and easily understand how we could use it to get our point across.  For the visualization, it’s a lot harder to assess, but we put a lot of effort into the way our data is presented.  We thought a lot about  color choices, arrangement on a page, where the eye is drawn to first, spacing between elements, and other UI design techniques.  We also used the resources provided in class that specifically had suggestions on good design technique, and tried to use these to guide our decision-making processes and what representations we used.  It’s hard to judge whether our visualization succeeded in being compelling and informative, especially to an outsider who hasn’t spent as much time obsessing over every detail as we have, but the two people we’ve shown so far (for the purpose of getting UI feedback) seemed to find it so.

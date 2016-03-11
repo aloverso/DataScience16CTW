@@ -4,23 +4,23 @@
 
 Getting locations of all abortion clinics in the US
 
-![Clinic location map](cliniclocs.png)
+![Clinic location map](img/cliniclocs.png)
 
 Learned how to plot a state-by-state heatmap by plotting the number of TRAP laws in each state:
 
-![Number of TRAP laws map](numtraplaws.png)
+![Number of TRAP laws map](img/numtraplaws.png)
 
 Used a dataset that gave us the latitude and longitude location of every US city to find the closest abortion clinic to that city.  We then used Google Maps API to calculate the driving distance from the city to the closest clinic:
 
-![Driving time to closest clinic](drivetime.png)
+![Driving time to closest clinic](img/drivetime.png)
 
 We then used the mandated state waiting period for each state (which require a period of 18-72 hours between a counseling session at the clinic and the actual abortion.  Using this data, we determined how much time the patient would actually spend getting the abortion, including such factors as whether they would need to make two separate trips to clinic and whether they would need one more nights’ stay in a nearby hotel, waiting for the procedure.  The following map shows the results of this, mapping the total time spent getting the abortion (note the change in scale when comparing to previous map).
 
-![Total time to clinic](totaltime.png)
+![Total time to clinic](img/totaltime.png)
 
 Additionally, based on this data, we calculated how many nights one must spend in a hotel, depending on the state the clinic is located in and how far you drove.  The following chart shows that how many nights you would stay in a hotel, if you lived in that city:
 
-![Number of nights in hotel](hotelnights.png)
+![Number of nights in hotel](img/hotelnights.png)
 
 
 We also got related interesting data sets which may be interested to be plotted with abortion data, like wage, employment, gas info data sets.
@@ -28,11 +28,11 @@ We also got related interesting data sets which may be interested to be plotted 
 Also, found an alternative tool to plot more specific info map. 
 The below is the example of the heat map of the percentage of counties without abortion providers in each state.
 
-![Percentage of Counties w/o abortion provider](percent_no_provider.png)
+![Percentage of Counties w/o abortion provider](img/percent_no_provider.png)
 
 Example of employment rate in each county heat map. We would reference this info with abortion data later to explore the potential relationships
 
-![Unemployment map](unemployment.png)
+![Unemployment map](img/unemployment.png)
 
 
 ## Going Forward:
