@@ -136,7 +136,7 @@
               bar =  d3.selectAll("svg").append("g").attr("id","colorbar");
               pointer = d3.selectAll("#colorbar").call(colorbar);
 
-                d3.json("https://raw.githubusercontent.com/alignedleft/d3-book/master/chapter_12/us-states.json", function(json) {
+                d3.json("https://raw.githubusercontent.com/aloverso/DataScience16CTW/master/us-states.json", function(json) {
 
                     //Merge the ag. data and GeoJSON
                     //Loop through once for each ag. data value
@@ -233,7 +233,7 @@
             });
 
             // //Load in GeoJSON data
-            // d3.json("https://raw.githubusercontent.com/alignedleft/d3-book/master/chapter_12/us-states.json", function(json) {
+            // d3.json("https://raw.githubusercontent.com/aloverso/DataScience16CTW/master/us-states.json", function(json) {
                 
             //     //Bind data and create one path per GeoJSON feature
             //     svg.selectAll("path")
